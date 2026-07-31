@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato — Lucas Cabral Advogados</title>
+<meta name="description" content="Fale com Lucas Cabral sobre sua dívida rural, contrato agrário ou gestão financeira. Avaliação inicial sem custo, com sigilo.">
+<link rel="icon" href="assets/logo-fundo-navy.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="index.html" class="header__mark">
+      <img src="assets/logo-preto.png" alt="Lucas Cabral Advogados" style="height:34px;width:auto">
+    </a>
+    <button class="header__toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <ul class="header__nav">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="areas-de-atuacao.html">Áreas de Atuação</a></li>
+      <li><a href="radar-agro.html">Radar Agro</a></li>
+      <li><a href="contato.html" aria-current="page">Contato</a></li>
+    </ul>
+    <a href="contato.html" class="btn header__cta">Falar com Lucas</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="page-banner">
+    <div class="page-banner__bg"><img src="assets/serie/contato-banner.jpg" alt="Lucas Cabral com a família Zanuzzi na lavoura"></div>
+    <div class="page-banner__overlay"></div>
+    <div class="container">
+      <p class="eyebrow reveal">Contato</p>
+      <h1 class="reveal">Fale sobre a sua situação</h1>
+      <p class="reveal">Sem compromisso, com clareza. Avaliação inicial sem custo, com sigilo total.</p>
+    </div>
+  </div>
+
+  <!-- FORMULÁRIO -->
+  <section class="section">
+    <div class="container grid grid--2 grid--align-start">
+      <div class="reveal">
+        <p class="eyebrow">Primeiro passo</p>
+        <h2>Conte um pouco da sua situação</h2>
+        <p>
+          Preencha os dados ao lado. Nossa equipe entra em contato para entender o seu caso e
+          explicar, sem rodeios, quais caminhos existem.
+        </p>
+
+        <div class="contact-channels">
+          <div class="contact-channel">
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/55[DDD][NÚMERO]" target="_blank" rel="noopener">[DDD] [número]</a>
+          </div>
+          <div class="contact-channel">
+            <strong>E-mail</strong>
+            <span>[e-mail de contato]</span>
+          </div>
+          <div class="contact-channel">
+            <strong>Região de atendimento</strong>
+            <span>Ponte de Pedra, Serranópolis e Jataí — GO</span>
+          </div>
+        </div>
+
+        <div class="signature">
+          <img src="assets/serie/sobre-origem.jpg" alt="Lucas Cabral" class="signature-photo">
+          <div>
+            <strong>Lucas Cabral</strong>
+            <span>Advogado — Direito do Agronegócio</span>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        TODO: substituir a action abaixo pelo endpoint real do Formspree
+        (ou outro serviço de formulário). Criar o form em https://formspree.io,
+        pegar o ID gerado e trocar "SEU_FORM_ID" por ele.
+      -->
+      <form class="form reveal" action="https://formspree.io/f/SEU_FORM_ID" method="POST">
+        <label>
+          Nome completo
+          <input type="text" name="nome" required>
+        </label>
+        <label>
+          Telefone / WhatsApp
+          <input type="tel" name="telefone" required>
+        </label>
+        <label>
+          Cidade / Estado
+          <input type="text" name="cidade">
+        </label>
+        <label>
+          Assunto
+          <select name="assunto">
+            <option value="renegociacao">Renegociação de dívida rural</option>
+            <option value="contrato">Contrato agrário</option>
+            <option value="gestao">Gestão financeira</option>
+            <option value="outro">Outro</option>
+          </select>
+        </label>
+        <label>
+          Conte um pouco da sua situação
+          <textarea name="situacao" rows="4"></textarea>
+        </label>
+        <button type="submit" class="btn btn--block">Enviar e falar com a equipe</button>
+        <p class="form__note">Seus dados são tratados com sigilo e usados apenas para este atendimento.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <p class="footer__mark">Lucas Cabral Advogados</p>
+        <p>Direito do Agronegócio, Crédito Rural e Gestão de Risco Jurídico do Produtor Rural.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="areas-de-atuacao.html">Áreas de Atuação</a></li>
+          <li><a href="radar-agro.html">Radar Agro</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Atendimento</h4>
+        <ul>
+          <li><span>[e-mail de contato]</span></li>
+          <li><span>[telefone]</span></li>
+          <li><span>Ponte de Pedra / Serranópolis / Jataí — GO</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__bottom">Lucas Cabral Advogados</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
