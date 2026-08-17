@@ -1,3 +1,12 @@
+# As landings de anúncio ficam fora do índice orgânico pra não competirem com
+# as páginas institucionais — mas o AdsBot precisa rastreá-las, senão o Google
+# reprova o anúncio por destino inacessível.
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
 User-agent: *
 Allow: /
 Disallow: /landings/
