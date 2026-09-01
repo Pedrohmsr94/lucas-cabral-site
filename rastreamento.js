@@ -8,6 +8,28 @@
 
   window.dataLayer = window.dataLayer || [];
 
+  /* ------------------------------------------------------ primeiro toque */
+  /* Guarda, uma vez por sessão, de onde a pessoa veio. 'lc_rastreio' leva os
+     UTM/click IDs da primeira URL (mesmo formato que landings/script.js já
+     usava — quem gravar primeiro vale). 'lc_ref' leva o referenciador e a
+     página de entrada: é o que separa orgânico (instagram, google sem UTM,
+     whatsapp) de acesso direto quando não há UTM nenhuma. Os formulários do
+     site e das landings anexam os dois à mensagem do lead. */
+  try {
+    var params = new URLSearchParams(location.search);
+    var chaves = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+    var toque = [];
+    chaves.forEach(function (k) { var v = params.get(k); if (v) toque.push(k + '=' + v); });
+    if (toque.length && !sessionStorage.getItem('lc_rastreio')) {
+      sessionStorage.setItem('lc_rastreio', toque.join('&'));
+    }
+    if (!sessionStorage.getItem('lc_ref')) {
+      var ref = '';
+      try { ref = document.referrer ? new URL(document.referrer).host : ''; } catch (e) { ref = document.referrer || ''; }
+      sessionStorage.setItem('lc_ref', (ref || 'direto') + ' -> ' + location.pathname);
+    }
+  } catch (e) { /* navegação privada sem sessionStorage: segue sem rastreio */ }
+
   /* ---------------------------------------------------------------- GTM */
   if (GTM_ID) {
     window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });

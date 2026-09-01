@@ -47,7 +47,9 @@
 
       try {
         var rastreio = sessionStorage.getItem('lc_rastreio');
+        var ref = sessionStorage.getItem('lc_ref'); /* referenciador + página de entrada, gravado pelo rastreamento.js */
         if (rastreio) extras.push('Origem do clique: ' + rastreio);
+        if (ref) extras.push('Referência: ' + ref);
       } catch (e) { /* sem sessionStorage, o landing_page ainda carrega a URL atual */ }
 
       var payload = {

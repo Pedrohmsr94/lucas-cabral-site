@@ -76,27 +76,26 @@
         </div>
       </div>
 
-      <!--
-        TODO: substituir a action abaixo pelo endpoint real do Formspree
-        (ou outro serviço de formulário). Criar o form em https://formspree.io,
-        pegar o ID gerado e trocar "SEU_FORM_ID" por ele.
-      -->
-      <form class="form reveal" action="https://formspree.io/f/SEU_FORM_ID" method="POST">
+      <!-- Mesmo destino das landings: o /api/leads do painel (ver script.js).
+           O Formspree previsto aqui nunca foi configurado. -->
+      <form id="contatoForm" class="form reveal" data-origem="site-contato">
         <label>
           Nome completo
-          <input type="text" name="nome" required>
+          <input type="text" name="nome" autocomplete="name" required>
         </label>
         <label>
           Telefone / WhatsApp
-          <input type="tel" name="telefone" required>
+          <input type="tel" name="telefone" autocomplete="tel" required>
         </label>
         <label>
           Cidade / Estado
-          <input type="text" name="cidade">
+          <input type="text" name="cidade" data-rotulo="Cidade/UF" autocomplete="address-level2">
         </label>
+        <!-- Campo-isca contra robô: invisível, pessoa não preenche. -->
+        <input type="text" name="site" class="form__hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label>
           Assunto
-          <select name="assunto">
+          <select name="assunto" data-rotulo="Assunto">
             <option value="renegociacao">Renegociação de dívida rural</option>
             <option value="contrato">Contrato agrário</option>
             <option value="gestao">Gestão financeira</option>
@@ -105,10 +104,11 @@
         </label>
         <label>
           Conte um pouco da sua situação
-          <textarea name="situacao" rows="4"></textarea>
+          <textarea name="situacao" rows="4" data-rotulo="Situação"></textarea>
         </label>
         <button type="submit" class="btn btn--block">Enviar e falar com a equipe</button>
         <p class="form__note">Seus dados são tratados com sigilo e usados apenas para este atendimento.</p>
+        <p id="contatoFormFeedback" class="form__feedback" role="status"></p>
       </form>
     </div>
   </section>

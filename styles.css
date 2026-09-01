@@ -1041,6 +1041,13 @@ button.btn { font-family: var(--sans); }
   margin: 4px 0 0;
 }
 
+.form__feedback { font-size: 0.9rem; margin: 0; }
+.form__feedback.is-ok { color: #2f6b3f; font-weight: 600; }
+.form__feedback.is-error { color: #8b3a2f; font-weight: 600; }
+
+/* Campo-isca do formulário: fora da tela, invisível pra pessoa. */
+.form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
 /* Signature */
 .signature {
   display: flex;
