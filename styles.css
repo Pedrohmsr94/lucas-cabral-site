@@ -58,7 +58,9 @@ p { margin: 0 0 1rem; }
   margin-bottom: 0.9rem;
 }
 
-.section--dark .eyebrow { color: var(--gold); }
+.section--dark .eyebrow,
+.masthead .eyebrow,
+.page-banner .eyebrow { color: var(--gold); }
 
 .rule {
   border: none;
@@ -100,6 +102,12 @@ p { margin: 0 0 1rem; }
 }
 
 .header--dark .header__mark { color: #fff; }
+
+.header__mark img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
 
 .header__mark-name {
   font-family: var(--serif);
@@ -189,7 +197,8 @@ p { margin: 0 0 1rem; }
 }
 
 @media (max-width: 480px) {
-  .header__inner { padding: 14px 20px; }
+  .header__inner { padding: 12px 20px; }
+  .header__mark img { height: 38px; }
 }
 
 /* Text links / buttons — sem gradiente, sem "botão de venda" */
@@ -277,7 +286,9 @@ button.btn { font-family: var(--sans); }
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(115deg, rgba(27, 30, 44, 0.94) 0%, rgba(27, 30, 44, 0.82) 38%, rgba(27, 30, 44, 0.42) 78%);
+  background:
+    linear-gradient(180deg, rgba(27, 30, 44, 0) 45%, rgba(27, 30, 44, 0.45) 100%),
+    linear-gradient(115deg, rgba(27, 30, 44, 0.96) 0%, rgba(27, 30, 44, 0.86) 38%, rgba(27, 30, 44, 0.6) 78%, rgba(27, 30, 44, 0.52) 100%);
 }
 
 .masthead .container {
@@ -296,13 +307,21 @@ button.btn { font-family: var(--sans); }
   margin-bottom: 22px;
 }
 
-.masthead h1 { color: #fff; max-width: 720px; }
+.masthead h1 {
+  color: #fff;
+  max-width: 720px;
+  text-shadow: 0 1px 2px rgba(27, 30, 44, 0.5), 0 2px 20px rgba(27, 30, 44, 0.35);
+}
 
 .masthead__sub {
   max-width: 560px;
-  color: var(--text-muted-dark);
+  color: var(--text-on-dark);
   font-size: 1.05rem;
+  text-shadow: 0 1px 2px rgba(27, 30, 44, 0.5), 0 2px 16px rgba(27, 30, 44, 0.35);
 }
+
+.masthead .link-arrow { color: #fff; border-bottom-color: var(--gold); }
+.masthead .link-arrow:hover { color: var(--gold-light); }
 
 .masthead__actions {
   margin-top: 32px;
@@ -314,7 +333,8 @@ button.btn { font-family: var(--sans); }
 
 .masthead__note {
   font-size: 0.8rem;
-  color: var(--text-muted-dark);
+  color: var(--text-on-dark);
+  text-shadow: 0 1px 2px rgba(27, 30, 44, 0.5);
 }
 
 /* Page banner (interior pages) — mesma foto do hero, mais compacta */
@@ -355,8 +375,17 @@ button.btn { font-family: var(--sans); }
 
 .page-banner .container { position: relative; z-index: 2; }
 
-.page-banner h1 { color: #fff; margin-bottom: 0.6rem; font-size: clamp(1.9rem, 3.6vw, 2.8rem); }
-.page-banner p { color: var(--text-muted-dark); max-width: 560px; }
+.page-banner h1 {
+  color: #fff;
+  margin-bottom: 0.6rem;
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  text-shadow: 0 1px 2px rgba(27, 30, 44, 0.5), 0 2px 20px rgba(27, 30, 44, 0.35);
+}
+.page-banner p {
+  color: var(--text-on-dark);
+  max-width: 560px;
+  text-shadow: 0 1px 2px rgba(27, 30, 44, 0.5);
+}
 
 /* Sections */
 .section {
@@ -1137,17 +1166,28 @@ button.btn { font-family: var(--sans); }
   color: var(--text-muted-dark);
 }
 
-/* Reveal — fade + leve deslocamento, com stagger via JS */
+/* Reveal — fade + leve deslocamento + desfoque, com stagger via JS */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(24px);
+  filter: blur(12px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+
+/* As molduras editoriais já carregam filtro próprio — o desfoque entra junto,
+   senão a regra .reveal apagaria o grayscale delas */
+.editorial__frame.reveal { filter: grayscale(0.15) contrast(1.02) blur(12px); }
+.editorial__frame.reveal.is-visible { filter: grayscale(0.15) contrast(1.02) blur(0); }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal { opacity: 1; transform: none; filter: none; transition: none; }
+  .editorial__frame.reveal,
+  .editorial__frame.reveal.is-visible { filter: grayscale(0.15) contrast(1.02); }
 }
 
 /* Mobile */

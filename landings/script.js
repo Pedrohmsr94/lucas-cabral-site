@@ -3,6 +3,26 @@
 (function () {
   var LEADS_API_URL = 'https://lucas-cabral-painel.vercel.app/api/leads';
 
+  /* ------------------------------------------------- Rastreio de origem */
+
+  /* O anúncio chega com ?utm_source=...&utm_content=<criativo>. O payload já
+     manda a URL inteira em `landing_page`, mas se a pessoa navegar entre
+     páginas antes de preencher, a query se perde — então o primeiro toque
+     fica guardado na sessão e volta no envio. */
+  var CHAVES_RASTREIO = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var toque = [];
+    CHAVES_RASTREIO.forEach(function (chave) {
+      var valor = params.get(chave);
+      if (valor) toque.push(chave + '=' + valor);
+    });
+    if (toque.length && !sessionStorage.getItem('lc_rastreio')) {
+      sessionStorage.setItem('lc_rastreio', toque.join('&'));
+    }
+  } catch (e) { /* navegação privada sem sessionStorage: segue sem rastreio */ }
+
   /* ---------------------------------------------------------- Formulário */
 
   var leadForm = document.getElementById('leadForm');
@@ -25,6 +45,11 @@
         if (valor) extras.push(field.getAttribute('data-rotulo') + ': ' + valor);
       });
 
+      try {
+        var rastreio = sessionStorage.getItem('lc_rastreio');
+        if (rastreio) extras.push('Origem do clique: ' + rastreio);
+      } catch (e) { /* sem sessionStorage, o landing_page ainda carrega a URL atual */ }
+
       var payload = {
         nome: (formData.get('nome') || '').toString().trim(),
         telefone: (formData.get('telefone') || '').toString().trim(),
@@ -46,6 +71,18 @@
       })
         .then(function (response) {
           if (!response.ok) throw new Error('Falha no envio');
+          /* Evento de conversão: o GTM transforma isso em Lead (Pixel) e
+             gerar_lead (GA4). Só dispara em envio aceito pelo painel. */
+          window.dataLayer = window.dataLayer || [];
+          try {
+            window.dataLayer.push({
+              event: 'lead_enviado',
+              origem: payload.origem,
+              rastreio: sessionStorage.getItem('lc_rastreio') || '',
+            });
+          } catch (e) {
+            window.dataLayer.push({ event: 'lead_enviado', origem: payload.origem });
+          }
           leadForm.reset();
           if (feedback) {
             feedback.className = 'form__feedback is-ok';
