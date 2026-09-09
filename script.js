@@ -79,6 +79,7 @@
         telefone: (formData.get('telefone') || '').toString().trim(),
         origem: contatoForm.getAttribute('data-origem') || 'site-contato',
         landing_page: window.location.href,
+        cidade_estado: (formData.get('cidade') || '').toString().trim() || null,
         mensagem: extras.join('\n') || null,
       };
 

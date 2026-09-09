@@ -57,6 +57,9 @@
         telefone: (formData.get('telefone') || '').toString().trim(),
         origem: leadForm.getAttribute('data-origem') || 'landing',
         landing_page: window.location.href,
+        /* Também vai rotulada dentro de `mensagem` (via data-rotulo), mas o
+           kanban só lê a coluna — sem esta linha o card fica sem cidade. */
+        cidade_estado: (formData.get('cidade') || '').toString().trim() || null,
         mensagem: extras.join('\n') || null,
       };
 
