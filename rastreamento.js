@@ -4,7 +4,9 @@
    Com os IDs vazios o arquivo não carrega nada de fora: só monta o dataLayer
    e marca os cliques de WhatsApp/telefone, então pode ir pro ar antes deles. */
 (function () {
-  var GTM_ID = ''; /* ex.: 'GTM-XXXXXXX' — container único; Pixel e GA4 vivem dentro dele */
+  var GTM_ID = 'GTM-TC595VV3'; /* container único (criado 09/09/2026, conta no e-mail
+     de marketing do Lucas). Pixel 1374710610974005 e GA4 vivem DENTRO dele — não
+     colar o snippet do GTM à mão em página nenhuma, senão carrega duas vezes. */
 
   window.dataLayer = window.dataLayer || [];
 
