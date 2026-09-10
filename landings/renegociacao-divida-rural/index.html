@@ -21,8 +21,8 @@
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 
   /* 2. Hero mais curto e legível */
-  .hero__inner { padding: 104px 0 72px; }
-  .hero h1 { font-size: clamp(1.9rem, 5.2vw, 3rem); line-height: 1.14; }
+  .hero__inner { padding: 96px 32px 64px; }
+  .hero h1 { font-size: clamp(1.5rem, 4.4vw, 2.75rem); line-height: 1.18; }
   .hero__sub { max-width: 34rem; }
   .hero__overlay { background: linear-gradient(180deg, rgba(11,14,22,.78) 0%, rgba(11,14,22,.56) 45%, rgba(11,14,22,.92) 100%); }
 
@@ -57,6 +57,21 @@
   }
   .zap-fixo .btn { width: 100%; text-align: center; }
   @media (max-width: 860px) { .zap-fixo { display: block; } body { padding-bottom: 76px; } }
+
+  /* 11. Celular. O produtor lê isso no telefone, no campo: o título estava
+     ocupando quatro linhas e o corpo saindo em cinza pequeno. Inverte —
+     título menor, corpo maior. */
+  @media (max-width: 640px) {
+    .hero__inner { padding: 84px 22px 52px; }
+    .hero__sub { font-size: 1.06rem; line-height: 1.55; }
+    .papel p, .papel h3 { font-size: 1.02rem; }
+    .ressalva { font-size: 1rem; padding-left: 14px; }
+    .condicoes span { font-size: 1.02rem; }
+    .faq details p { font-size: 1.02rem; }
+    .faq summary { font-size: 1.04rem; }
+    .form--curto label { font-size: 1rem; }
+    .section__intro h2 { font-size: clamp(1.35rem, 5.6vw, 1.8rem); }
+  }
 
   /* 10. Contraste. O bronze claro do sistema (#a8792f, #c99a5b) fica entre 2,3:1
      e 3,5:1 sobre creme — abaixo do piso de 4,5:1 para texto pequeno. Numa
@@ -121,7 +136,7 @@
       <img src="../assets/simbolo.png" alt="" class="brand__mark">
       <span class="brand__name">Lucas Cabral<em>Advogados</em></span>
     </div>
-    <a href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site%20sobre%20renegocia%C3%A7%C3%A3o.%20Minha%20c%C3%A9dula%20%C3%A9%20de%20" class="btn btn--primary header__cta">WhatsApp</a>
+    <a href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site%20sobre%20renegocia%C3%A7%C3%A3o.%20Minha%20c%C3%A9dula%20%C3%A9%20de%20" class="btn btn--ghost header__cta">WhatsApp</a>
   </div>
 </header>
 
@@ -142,15 +157,13 @@
         <h1>Quem ficou inadimplente em agosto estava fora. Desde 8 de setembro, não está mais.</h1>
         <p class="hero__sub">
           A Resolução CMN 5.340 autorizou os bancos a compor dívidas que a norma de julho
-          deixava de fora — inclusive a de quem pediu a prorrogação de trinta dias, não
-          conseguiu formalizar a tempo e entrou em atraso. A janela fecha em 12 de novembro.
+          deixava de fora — inclusive a de quem pediu os trinta dias e não fechou a tempo.
         </p>
         <div>
           <div class="hero__actions">
-            <a href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site%20sobre%20a%20composi%C3%A7%C3%A3o%20de%20d%C3%ADvida.%20Minha%20c%C3%A9dula%20%C3%A9%20de%20(custeio%20%2F%20investimento%20%2F%20comercializa%C3%A7%C3%A3o)%2C%20venceu%20em%20___%20e%20a%20%C3%A1rea%20%C3%A9%20de%20___%20hectares." class="btn btn--primary">Falar no WhatsApp</a>
-            <a href="#form" class="btn btn--ghost">Mandar meu caso pelo formulário</a>
+            <a href="#form" class="btn btn--primary">Contar meu caso</a>
           </div>
-          <p class="hero__note">Lucas Cabral, OAB/GO 67.854. Escritório em Jataí, e a conversa vai até a fazenda quando o caso pede.</p>
+          <p class="hero__note">Lucas Cabral, OAB/GO 67.854. Escritório em Jataí.</p>
         </div>
       </div>
     </div>
@@ -166,56 +179,20 @@
       <div class="papeis">
         <div class="papel">
           <h3>Duas safras perdidas</h3>
-          <p>Perda registrada em <b>duas ou mais safras entre 2019 e 2025</b>. Não precisam ser seguidas.</p>
+          <p>Perda em <b>duas ou mais safras entre 2019 e 2025</b>.</p>
         </div>
         <div class="papel">
           <h3>Queda de 30% na renda</h3>
-          <p>A perda derrubou <b>pelo menos 30%</b> da renda bruta esperada para aquela safra ou atividade financiada.</p>
+          <p>A perda derrubou <b>pelo menos 30%</b> da renda bruta esperada.</p>
         </div>
         <div class="papel">
           <h3>Clima ou preço</h3>
-          <p>Seca, estiagem, geada, granizo, chuva demais, vendaval — ou <b>queda no preço</b> do que você financiou.</p>
+          <p>Seca, geada, granizo, chuva demais — ou <b>queda no preço</b>.</p>
         </div>
       </div>
       <p class="ressalva">
-        Os três juntos, comprovados por laudo de profissional habilitado nos termos do Manual
-        de Crédito Rural. O laudo precisa ligar a perda diretamente às operações que serão
-        liquidadas ou amortizadas — foto de lavoura seca não é laudo, e o banco pode pedir
-        um segundo se achar indício de irregularidade.
-      </p>
-    </div>
-  </section>
-
-  <!-- O QUE MUDOU EM 4 DE SETEMBRO -->
-  <section class="section">
-    <div class="container">
-      <div class="section__intro">
-        <p class="eyebrow">Resolução CMN 5.340, de 4 de setembro de 2026</p>
-        <h2>Duas situações que estavam fora e voltaram.</h2>
-      </div>
-      <ol class="etapas">
-        <li>
-          <b>01</b>
-          <div>
-            <h3>Você pediu os trinta dias e não fechou a tempo</h3>
-            <p>A norma de julho deu até trinta dias de prorrogação para quem solicitasse uma das
-            linhas especiais. Quem não conseguiu formalizar a composição dentro do prazo caiu em
-            atraso e ficou de fora. Agora entra.</p>
-          </div>
-        </li>
-        <li>
-          <b>02</b>
-          <div>
-            <h3>Sua parcela venceu depois de 14 de agosto</h3>
-            <p>Operação renegociada ou prorrogada até 31 de maio de 2026, com vencimento entre
-            <b>15 de agosto e 8 de setembro de 2026</b>, que entrou em atraso nesse intervalo. Esse
-            período não era coberto por nada. Agora é.</p>
-          </div>
-        </li>
-      </ol>
-      <p class="ressalva ressalva--claro">
-        A composição segue os mesmos limites e encargos da norma de julho, e não soma valor
-        novo: o que você tomar nas duas linhas não pode passar do teto de lá.
+        Os três juntos, comprovados por laudo de profissional habilitado. Foto de lavoura seca
+        não é laudo.
       </p>
     </div>
   </section>
@@ -233,23 +210,13 @@
         <li><b>12% ao ano</b><span>demais produtores, até R$ 4 milhões</span></li>
       </ul>
       <p class="ressalva ressalva--claro">
-        Pagamento em até oito anos, com juros na carência e a primeira parcela do principal
-        dois anos depois de contratar. <b>Esgotado o recurso controlado</b>, a mesma dívida pode
-        ser composta com recursos livres — aí o juro é negociado com o banco, sem esse teto.
-        É por isso que chegar cedo na fila muda o preço, e não só a chance.
-      </p>
-      <p class="ressalva ressalva--claro">
-        <b>Dívida de Fundo Constitucional tem um segundo relógio.</b> Operação de FCO, FNE ou FNO
-        entra normalmente na linha de composição, com o mesmo 12 de novembro. Mas a renegociação
-        feita pelo Manual de Crédito Rural, <b>fora</b> dessa linha, precisa acontecer até
-        <b>31 de outubro de 2026</b> para que a operação seja avaliada como nova — o que mexe na
-        classificação de risco e no crédito que vem depois. São caminhos diferentes, e a escolha
-        entre eles é parte do trabalho.
+        Até oito anos, com a primeira parcela do principal dois anos depois de contratar.
+        <b>Esgotado o recurso controlado</b>, a mesma dívida só se compõe com recurso livre, a
+        juro negociado — chegar cedo muda o preço, e não só a chance.
       </p>
       <p class="ressalva">
-        E a ressalva que ninguém gosta de dar: a norma <b>autoriza</b> o banco a criar a linha,
-        “por sua conveniência e decisão”. Contratar não é direito seu, é faculdade da
-        instituição. Por isso o pedido bem montado, cedo, pesa tanto.
+        A norma <b>autoriza</b> o banco a criar a linha, não obriga. Contratar não é direito seu.
+        Por isso o pedido bem montado, cedo, pesa tanto.
       </p>
     </div>
   </section>
@@ -261,9 +228,8 @@
         <p class="eyebrow">Primeiro passo</p>
         <h2>Conta como está a sua dívida.</h2>
         <p>
-          Dois campos e a situação da dívida. O escritório retorna para conferir se o seu caso
-          entra na composição e o que precisa estar pronto antes de 12 de novembro — inclusive
-          quando o caminho não é o judicial.
+          Dois campos. O escritório retorna para conferir se o seu caso entra e o que precisa
+          estar pronto antes de 12 de novembro.
         </p>
         <div class="form__signature">
           <img src="../assets/lucas-lavoura.jpg" alt="Lucas Cabral" class="form__signature-photo">
@@ -301,34 +267,6 @@
     </div>
   </section>
 
-  <!-- COMO FUNCIONA -->
-  <section class="section">
-    <div class="container">
-      <div class="section__intro">
-        <p class="eyebrow">Como o escritório trabalha</p>
-        <h2>Quatro etapas, e a negociação é a terceira.</h2>
-      </div>
-      <ol class="etapas">
-        <li>
-          <b>01</b>
-          <div><h3>Diagnóstico</h3><p>A dívida inteira na mesa, credor por credor, não só o contrato que está apertando mais.</p></div>
-        </li>
-        <li>
-          <b>02</b>
-          <div><h3>A conta</h3><p>Produtividade real por hectare contra custo real por hectare. Pessoa física separada da jurídica. É o que dá lastro à conversa seguinte.</p></div>
-        </li>
-        <li>
-          <b>03</b>
-          <div><h3>Pedido e negociação</h3><p>Enquadramento conferido, laudo em ordem e pedido protocolado por escrito, com data. Depois a negociação com cada credor, judicial ou extrajudicial, conforme o caso pedir.</p></div>
-        </li>
-        <li>
-          <b>04</b>
-          <div><h3>Acompanhamento</h3><p>Acordo assinado não é o fim. O que faz ele ser cumprido é a gestão que continua depois.</p></div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
   <!-- QUEM CUIDA -->
   <section class="section section--cream">
     <div class="container grid grid--2 grid--align-center">
@@ -339,13 +277,12 @@
         <p class="eyebrow">Quem cuida do seu caso</p>
         <h2>Renegociação e gestão financeira andam juntas.</h2>
         <p>
-          Prazo e juros novos só resolvem se o caixa fechar depois. Por isso aqui a
-          renegociação começa pelo número da fazenda, e não pela proposta que está na mesa.
+          Prazo e juros novos só resolvem se o caixa fechar depois. Por isso a renegociação
+          começa pelo número da fazenda, e não pela proposta que está na mesa.
         </p>
         <p>
-          Escritório em Jataí — GO, com atendimento em todo o Brasil e presença de campo na
-          região: Serranópolis, Ponte de Pedra, Mineiros, Rio Verde, Montividiu e vizinhança.
-          Quando o caso pede, a conversa é na fazenda.
+          Escritório em Jataí — GO, com atendimento em todo o Brasil. Quando o caso pede, a
+          conversa é na fazenda.
         </p>
       </div>
     </div>
@@ -360,56 +297,38 @@
       </div>
       <div class="faq">
         <details>
-          <summary>Perdi o prazo dos trinta dias e minha parcela está em atraso. Ainda dá?</summary>
+          <summary>Estou em atraso. Ainda dá?</summary>
           <div>
-            <p>Foi exatamente para isso que a norma de 4 de setembro foi editada. Ela alcança quem
-            pediu a prorrogação, não formalizou a composição dentro dos trinta dias e caiu em
-            atraso, e também quem tinha vencimento depois de 14 de agosto. O que decide agora é
-            o enquadramento e o laudo, não o atraso em si.</p>
+            <p>Foi para isso que a norma de setembro saiu. Agora decide o enquadramento e o
+            laudo, não o atraso.</p>
           </div>
         </details>
         <details>
-          <summary>Ainda estou em dia, só apertado. É cedo para procurar advogado?</summary>
+          <summary>Vai sujar meu nome?</summary>
           <div>
-            <p>É o melhor momento, e é o mais raro. Quem chega antes tem mais caminho disponível e
-            pega a linha enquanto o recurso com juro limitado ainda existe. Depois que ele se
-            esgota, a mesma dívida só se compõe com recurso livre, a juro negociado.</p>
+            <p>A norma diz que compor não impede novas operações nem gera cadastro restritivo.
+            Na composição com recurso livre isso não vem repetido, e se confere caso a caso.</p>
           </div>
         </details>
         <details>
-          <summary>Isso vai sujar meu nome ou fechar meu crédito?</summary>
+          <summary>Meu banco disse que não tem a linha.</summary>
           <div>
-            <p>A norma diz que contratar a composição não impede novas operações de crédito rural
-            nem é motivo para registro em cadastro restritivo. Duas ressalvas honestas: a norma
-            condiciona a nova operação à conveniência e à decisão do banco, e essa proteção está
-            escrita para a linha de recursos controlados. Na composição com recursos livres ela
-            não vem repetida no texto, e isso precisa ser conferido caso a caso.</p>
+            <p>Pode mesmo não ter: a norma autoriza, não obriga. Peça a recusa por escrito, com
+            o motivo.</p>
           </div>
         </details>
         <details>
-          <summary>Meu banco disse que não tem essa linha. Ele pode?</summary>
+          <summary>E se for FCO, CPR ou barter?</summary>
           <div>
-            <p>Pode. A resolução <b>autoriza</b> a instituição a criar a linha “por sua conveniência
-            e decisão” — não obriga. O que se faz nesse caso é pedir a recusa por escrito, com o
-            motivo, e conferir contra o que o seu pedido de fato tinha. Negativa sem motivo escrito
-            não deixa nada para discutir.</p>
-          </div>
-        </details>
-        <details>
-          <summary>Minha dívida é de CPR ou barter. Entra?</summary>
-          <div>
-            <p>As linhas de composição alcançam custeio, comercialização, industrialização e
-            parcelas de investimento. CPR e barter seguem regra própria e costumam ficar fora
-            desse desenho — o que não quer dizer que não haja caminho, quer dizer que é outro.
-            Por isso a primeira coisa é separar a dívida por instrumento.</p>
+            <p>FCO, FNE e FNO entram, no mesmo 12 de novembro. CPR e barter seguem regra própria
+            e costumam ficar fora — o caminho existe, mas é outro.</p>
           </div>
         </details>
         <details>
           <summary>Quanto custa?</summary>
           <div>
-            <p>Honorários são definidos caso a caso e combinados por escrito antes de qualquer
-            trabalho, dentro dos parâmetros da tabela da OAB/GO. Um passivo com um credor e um
-            passivo com seis credores não dão o mesmo trabalho.</p>
+            <p>Caso a caso, combinado por escrito antes do trabalho, nos parâmetros da tabela da
+            OAB/GO.</p>
           </div>
         </details>
       </div>
@@ -432,10 +351,9 @@
     </div>
     <div class="footer__legal">
       <p>
-        Conteúdo informativo, sem promessa de resultado, em observância ao Código de Ética e
-        Disciplina da OAB e ao Provimento 205/2021. Base normativa: Resolução CMN nº 5.330, de
-        23 de julho de 2026, e Resolução CMN nº 5.340, de 4 de setembro de 2026. Enquadramento,
-        limites e concessão dependem de análise da instituição financeira.
+        Conteúdo informativo, sem promessa de resultado, conforme o Código de Ética da OAB e o
+        Provimento 205/2021. Base: Resoluções CMN 5.330/2026 e 5.340/2026. Enquadramento e
+        concessão dependem da instituição financeira.
       </p>
     </div>
   </div>
