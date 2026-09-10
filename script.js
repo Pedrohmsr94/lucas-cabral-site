@@ -23,7 +23,7 @@
   }
 
   function getGroupId(el) {
-    var container = el.closest('.grid, .index-list, .method-list, .values-row, .footer__grid') || el.parentElement;
+    var container = el.closest('.grid, .index-list, .method-list, .footer__grid') || el.parentElement;
     if (!container.dataset.revealGroupId) {
       container.dataset.revealGroupId = 'g' + Math.random().toString(36).slice(2);
     }
@@ -116,6 +116,51 @@
           if (submitButton) submitButton.disabled = false;
         });
     });
+  }
+
+  /* ------------------------------------------------- linha do tempo (Sobre)
+     A linha dourada é desenhada pelo scroll e cada marco acende quando ela
+     chega nele. Só cresce: rolar de volta não apaga o que já foi contado,
+     senão a página pisca. Sem JS o CSS já nasce com a linha cheia. */
+  var timeline = document.querySelector('.timeline');
+  if (timeline) {
+    var marcos = timeline.querySelectorAll('.timeline__item');
+    timeline.classList.add('is-live');
+
+    if (prefersReducedMotion) {
+      marcos.forEach(function (marco) { marco.classList.add('is-reached'); });
+    } else {
+      var ANCORA = 0.62; /* altura da tela em que o "agora" da história passa */
+      var maxProgresso = 0;
+      var agendado = false;
+
+      var desenhar = function () {
+        agendado = false;
+        var caixa = timeline.getBoundingClientRect();
+        var linhaDaTela = window.innerHeight * ANCORA;
+        var progresso = (linhaDaTela - caixa.top) / caixa.height;
+        maxProgresso = Math.max(maxProgresso, Math.min(1, progresso));
+        timeline.style.setProperty('--linha', maxProgresso.toFixed(4));
+
+        marcos.forEach(function (marco) {
+          if (marco.classList.contains('is-reached')) return;
+          if (marco.getBoundingClientRect().top + 14 <= linhaDaTela) {
+            marco.classList.add('is-reached');
+          }
+        });
+      };
+
+      var aoRolar = function () {
+        if (!agendado) {
+          agendado = true;
+          requestAnimationFrame(desenhar);
+        }
+      };
+
+      window.addEventListener('scroll', aoRolar, { passive: true });
+      window.addEventListener('resize', aoRolar);
+      desenhar();
+    }
   }
 
   var revealEls = document.querySelectorAll('.reveal');
