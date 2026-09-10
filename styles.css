@@ -518,29 +518,89 @@ button.btn { font-family: var(--sans); }
   pointer-events: none;
 }
 
-/* Valores — lista horizontal com divisores, não boxes */
-.values-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0;
+/* Credenciais — formação e trajetória em régua, sem selo nem medalha */
+.credentials {
   list-style: none;
-  margin: 0;
+  margin: 24px 0 0;
   padding: 0;
   border-top: 1px solid var(--rule-light);
+}
+
+.credentials li {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 20px;
+  align-items: baseline;
+  padding: 16px 0;
   border-bottom: 1px solid var(--rule-light);
 }
 
-.section--dark .values-row { border-color: var(--rule-dark); }
-
-.values-row li {
+.credentials__when {
   font-family: var(--serif);
-  font-size: 1.05rem;
-  padding: 20px 28px 20px 0;
-  margin-right: 28px;
+  font-size: 0.95rem;
+  color: var(--bronze);
+  letter-spacing: 0.02em;
 }
 
-.values-row li:not(:last-child) { border-right: 1px solid var(--rule-light); }
-.section--dark .values-row li:not(:last-child) { border-right-color: var(--rule-dark); }
+.credentials__what { font-size: 0.98rem; }
+.credentials__what strong { display: block; font-weight: 600; }
+.credentials__what span { color: var(--text-muted-light); font-size: 0.9rem; }
+
+@media (max-width: 640px) {
+  .credentials li { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* Números — prova de experiência, mesma régua horizontal do resto */
+.figures {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--rule-light);
+}
+
+.figures li {
+  padding: 32px 32px 32px 0;
+  border-right: 1px solid var(--rule-light);
+}
+
+.figures li:last-child { border-right: none; padding-right: 0; }
+
+.figures__num {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.figures__label {
+  display: block;
+  font-size: 0.94rem;
+  color: var(--text-muted-light);
+  max-width: 24ch;
+}
+
+.figures__note {
+  margin: 28px 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted-light);
+  max-width: 68ch;
+}
+
+.section--dark .figures { border-top-color: var(--rule-dark); }
+.section--dark .figures li { border-right-color: var(--rule-dark); }
+.section--dark .figures__num { color: var(--gold-light); }
+.section--dark .figures__label,
+.section--dark .figures__note { color: var(--text-muted-dark); }
+
+@media (max-width: 760px) {
+  .figures { grid-template-columns: 1fr; }
+  .figures li { padding: 24px 0; border-right: none; border-bottom: 1px solid var(--rule-light); }
+  .figures li:last-child { border-bottom: none; padding-bottom: 0; }
+  .section--dark .figures li { border-bottom-color: var(--rule-dark); }
+}
 
 /* Método — lista, não grid de boxes */
 .method-list {
