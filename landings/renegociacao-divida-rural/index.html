@@ -15,17 +15,6 @@
      em 58 visitas de mídia paga. O que muda: página curta, contato acima da
      dobra, WhatsApp fixo no rodapé e conteúdo sempre visível. */
 
-  /* 1. Conteúdo nunca nasce invisível. O .reveal do styles.css parte de
-     opacity:0 e só aparece quando o IntersectionObserver dispara. Em 3G no
-     campo, ou com o JS atrasado, isso é uma página em branco. */
-  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
-
-  /* 2. Hero mais curto e legível */
-  .hero__inner { padding: 96px 32px 64px; }
-  .hero h1 { font-size: clamp(1.5rem, 4.4vw, 2.75rem); line-height: 1.18; }
-  .hero__sub { max-width: 34rem; }
-  .hero__overlay { background: linear-gradient(180deg, rgba(11,14,22,.78) 0%, rgba(11,14,22,.56) 45%, rgba(11,14,22,.92) 100%); }
-
   /* 3. Faixa de prazo: o único número que muda a decisão hoje */
   .prazo {
     display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap;
@@ -47,54 +36,14 @@
   .form--curto label { display: block; margin-bottom: 12px; }
   .form__nota { font-size: .88rem; opacity: .8; margin-top: 10px; }
 
-  /* 6. WhatsApp fixo no celular. É o gargalo medido: tempo de resposta pesa
-     mais que a página, e a conversa é onde o Lucas converte. */
-  .zap-fixo {
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
-    display: none; padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
-    background: rgba(13,16,24,.94); backdrop-filter: blur(6px);
-    border-top: 1px solid rgba(201,151,90,.3);
-  }
-  .zap-fixo .btn { width: 100%; text-align: center; }
-  @media (max-width: 860px) { .zap-fixo { display: block; } body { padding-bottom: 76px; } }
-
   /* 11. Celular. O produtor lê isso no telefone, no campo: o título estava
      ocupando quatro linhas e o corpo saindo em cinza pequeno. Inverte —
      título menor, corpo maior. */
   @media (max-width: 640px) {
-    .hero__inner { padding: 84px 22px 52px; }
-    .hero__sub { font-size: 1.06rem; line-height: 1.55; }
     .papel p, .papel h3 { font-size: 1.02rem; }
-    .ressalva { font-size: 1rem; padding-left: 14px; }
     .condicoes span { font-size: 1.02rem; }
-    .faq details p { font-size: 1.02rem; }
-    .faq summary { font-size: 1.04rem; }
     .form--curto label { font-size: 1rem; }
-    .section__intro h2 { font-size: clamp(1.35rem, 5.6vw, 1.8rem); }
   }
-
-  /* 10. Contraste. O bronze claro do sistema (#a8792f, #c99a5b) fica entre 2,3:1
-     e 3,5:1 sobre creme — abaixo do piso de 4,5:1 para texto pequeno. Numa
-     página que o produtor abre no celular, no sol, isso decide se ele lê ou sai.
-     Os números grandes de .condicoes ficam como estão: texto grande, piso 3:1. */
-  .section .eyebrow,
-  .section--cream .eyebrow,
-  .section--form .eyebrow { color: #7E5719; }
-  .section--dark .eyebrow { color: #E4C089; }
-
-  /* 8. Ressalva: o parágrafo que dá a má notícia junto com a boa. Existe porque
-     norma de crédito rural tem letra miúda, e esconder a letra miúda numa página
-     de anúncio é o que faz o produtor chegar no banco e levar não. */
-  .ressalva {
-    margin: 24px 0 0;
-    font-size: .95rem;
-    line-height: 1.62;
-    max-width: 68ch;
-    padding-left: 18px;
-    border-left: 1px solid rgba(201,151,90,.55);
-  }
-  .ressalva b { font-weight: 600; }
-  .section--dark .ressalva { color: #C9C4B8; }
 
   /* Segundo prazo da pagina, sobre fundo claro */
   .prazo--claro {
@@ -376,8 +325,8 @@
   </div>
 </footer>
 
-<div class="zap-fixo">
-  <a href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site.%20Minha%20c%C3%A9dula%20%C3%A9%20de%20(custeio%20%2F%20investimento%20%2F%20CPR)%2C%20a%20parcela%20vence%20em%20___%20e%20a%20%C3%A1rea%20%C3%A9%20de%20___%20hectares." class="btn btn--primary">Falar no WhatsApp</a>
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site%20sobre%20a%20composi%C3%A7%C3%A3o%20de%20d%C3%ADvida." class="btn btn--primary">Falar no WhatsApp</a>
 </div>
 
 <script src="../script.js"></script>

@@ -823,3 +823,55 @@ button.btn { font-family: var(--sans); }
 
   .footer__inner { justify-content: center; text-align: center; }
 }
+
+/* ==========================================================================
+   Celular primeiro (2026-09-10). O produtor lê isso no telefone, no campo.
+   Regras que valem pras seis landings.
+   ========================================================================== */
+
+/* 1. Conteúdo nunca nasce invisível. O .reveal parte de opacity 0 e só aparece
+   quando o IntersectionObserver dispara. Em 3G, ou com o JS atrasado, é
+   página em branco. */
+.reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* 2. Hero. .hero__inner também é .container, e o padding lateral zero matava o
+   respiro de 22px — o título encostava na borda da tela. Título menor, corpo
+   maior: o h1 ocupava quatro linhas no 390px e o texto saía em cinza pequeno. */
+.hero__inner { padding: 112px 32px 72px; }
+.hero h1 { font-size: clamp(1.5rem, 4.4vw, 2.75rem); line-height: 1.18; }
+.hero__sub { max-width: 34rem; color: #D8D2C6; }
+.hero__overlay { background: linear-gradient(180deg, rgba(11,14,22,.78) 0%, rgba(11,14,22,.56) 45%, rgba(11,14,22,.92) 100%); }
+
+/* 3. Barra fixa com um botão só. Ela só sobe depois que o hero sai da tela
+   (script.js), então o dourado do hero e o dela nunca disputam a mesma dobra. */
+.sticky-cta .btn { flex: 1; }
+
+/* 4. Ressalva: o parágrafo que dá a má notícia junto com a boa. Esconder a
+   letra miúda numa página de anúncio é o que faz o produtor chegar no banco e
+   levar não. */
+.ressalva {
+  margin: 22px 0 0;
+  font-size: .95rem;
+  line-height: 1.62;
+  max-width: 68ch;
+  padding-left: 18px;
+  border-left: 1px solid rgba(201,151,90,.55);
+}
+.ressalva b { font-weight: 600; }
+.section--dark .ressalva { color: #C9C4B8; }
+
+/* 5. Contraste. O bronze claro do sistema fica entre 2,3:1 e 3,5:1 sobre creme,
+   abaixo do piso de 4,5:1 para texto pequeno. */
+.section .eyebrow,
+.section--cream .eyebrow,
+.section--form .eyebrow { color: #7E5719; }
+.section--dark .eyebrow,
+.hero .eyebrow { color: #E4C089; }
+
+@media (max-width: 640px) {
+  .hero__inner { padding: 84px 22px 52px; }
+  .hero__sub { font-size: 1.06rem; line-height: 1.55; }
+  .card p, .card h3, .ressalva, .faq details p, .checklist li, .steps p, .lead { font-size: 1.02rem; }
+  .faq summary { font-size: 1.04rem; }
+  .section__intro h2, .section h2 { font-size: clamp(1.35rem, 5.6vw, 1.8rem); }
+}
