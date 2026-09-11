@@ -829,10 +829,33 @@ button.btn { font-family: var(--sans); }
    Regras que valem pras seis landings.
    ========================================================================== */
 
-/* 1. Conteúdo nunca nasce invisível. O .reveal parte de opacity 0 e só aparece
-   quando o IntersectionObserver dispara. Em 3G, ou com o JS atrasado, é
-   página em branco. */
-.reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+/* 1. A animação é opt-in, não opt-out. O .reveal nascia em opacity 0 e só
+   aparecia quando o IntersectionObserver disparava — em 3G no campo, ou com o
+   script bloqueado, isso é uma página em branco. A resposta não é desligar a
+   animação: é a página nascer visível e o script pedir a animação.
+   Um script inline no <head> marca <html class="anima"> antes da primeira
+   pintura, e se o script.js não der sinal de vida em 2,5s a marca cai sozinha. */
+html:not(.anima) .reveal { opacity: 1; transform: none; transition: none; }
+
+.anima .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.72s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.anima .reveal.is-visible { opacity: 1; transform: none; }
+
+/* O hero é a primeira pintura da página: animá-lo atrasa o que o produtor
+   veio ler. Título, texto e botão entram prontos; a animação começa da
+   segunda dobra pra baixo. */
+.anima .hero .reveal { opacity: 1; transform: none; transition: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anima .reveal { opacity: 1; transform: none; transition: none; }
+  .hero__bg-img { animation: none; }
+}
 
 /* 2. Hero. .hero__inner também é .container, e o padding lateral zero matava o
    respiro de 22px — o título encostava na borda da tela. Título menor, corpo
@@ -874,4 +897,32 @@ button.btn { font-family: var(--sans); }
   .card p, .card h3, .ressalva, .faq details p, .checklist li, .steps p, .lead { font-size: 1.02rem; }
   .faq summary { font-size: 1.04rem; }
   .section__intro h2, .section h2 { font-size: clamp(1.35rem, 5.6vw, 1.8rem); }
+}
+
+/* Superfícies que o navegador desenha sozinho — seleção, foco de teclado e
+   barra de rolagem saíam no padrão de fábrica, que não pertence a design nenhum.
+   A folha do site já tinha isso; as landings têm folha própria e nunca herdaram. */
+::selection { background: var(--gold); color: var(--navy); }
+.section--dark ::selection, .hero ::selection { background: var(--gold-light); color: var(--navy); }
+
+html { scrollbar-color: var(--bronze) var(--cream-2); scrollbar-width: thin; }
+
+:focus-visible { outline: 2px solid var(--bronze); outline-offset: 3px; border-radius: 3px; }
+.section--dark :focus-visible,
+.hero :focus-visible,
+.header :focus-visible,
+.footer :focus-visible { outline-color: var(--gold); }
+
+/* O "+" da pergunta girava trocando de caractere, o que não anima. Girando o
+   próprio sinal ele vira "×" com transição — e a resposta abre com o cursor
+   acompanhando o gesto. */
+.faq summary::after { transition: transform 0.26s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease; }
+.faq details[open] summary::after { content: "+"; transform: translateY(-50%) rotate(45deg); }
+.faq summary:hover::after { color: var(--gold-light); }
+
+.header { transition: background 0.3s ease, box-shadow 0.3s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  .faq summary::after,
+  .header { transition: none; }
 }

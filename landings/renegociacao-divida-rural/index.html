@@ -7,8 +7,8 @@
 <meta name="description" content="A Resolução CMN 5.340, de 4 de setembro de 2026, abriu composição de dívida rural para quem ficou inadimplente e estava fora da 5.330. Contratação até 12 de novembro. Escritório em Jataí, GO, com atendimento em todo o Brasil.">
 <meta name="robots" content="noindex, follow">
 <link rel="icon" href="../assets/logo-fundo-navy.png">
-<link rel="stylesheet" href="../styles.css?v=20260911">
-<script src="/rastreamento.js?v=20260911" defer></script>
+<link rel="stylesheet" href="../styles.css?v=20260911b">
+<script src="/rastreamento.js?v=20260911b" defer></script>
 <style>
   /* Ajustes desta landing (2026-09-10): a versão anterior tinha 996 palavras e
      8,4 telas de altura no celular, com o formulário a 74% da página. Zero lead
@@ -76,6 +76,8 @@
   .etapas h3 { margin: 0; font-size: 1.02rem; }
   .section--dark .etapas li { border-color: rgba(255,255,255,.14); }
 </style>
+<script>/* animação só se o script estiver vivo; senão a página fica visível */
+(function(d){d.className+=' anima';setTimeout(function(){if(d.className.indexOf('anima-ok')<0)d.className=d.className.replace(' anima','');},2500);})(document.documentElement);</script>
 </head>
 <body>
 
@@ -122,25 +124,25 @@
   <!-- QUEM SE ENCAIXA -->
   <section class="section section--dark">
     <div class="container">
-      <div class="section__intro">
+      <div class="section__intro reveal">
         <p class="eyebrow">Antes de qualquer conversa com o banco</p>
         <h2>Repara nos três. Se bater, você entra.</h2>
       </div>
       <div class="papeis">
-        <div class="papel">
+        <div class="papel reveal">
           <h3>Duas safras perdidas</h3>
           <p>Perda em <b>duas ou mais safras entre 2019 e 2025</b>.</p>
         </div>
-        <div class="papel">
+        <div class="papel reveal">
           <h3>Queda de 30% na renda</h3>
           <p>A perda derrubou <b>pelo menos 30%</b> da renda bruta esperada.</p>
         </div>
-        <div class="papel">
+        <div class="papel reveal">
           <h3>Clima ou preço</h3>
           <p>Seca, geada, granizo, chuva demais — ou <b>queda no preço</b>.</p>
         </div>
       </div>
-      <p class="ressalva">
+      <p class="ressalva reveal">
         Os três juntos, comprovados por laudo de profissional habilitado. Foto de lavoura seca
         não é laudo — e vai aparecer gente te vendendo laudo pronto. Confere quem assina.
       </p>
@@ -150,11 +152,11 @@
   <!-- CONDICOES E URGENCIA REAL -->
   <section class="section section--cream">
     <div class="container">
-      <div class="section__intro">
+      <div class="section__intro reveal">
         <p class="eyebrow">O que está na mesa</p>
         <h2>Enquanto o recurso controlado durar, o juro tem teto.</h2>
       </div>
-      <ul class="condicoes">
+      <ul class="condicoes reveal">
         <li><b>6% ao ano</b><span>agricultor familiar no Pronaf, até R$ 400 mil</span></li>
         <li><b>9% ao ano</b><span>mini, pequeno e médio produtor no Pronamp, até R$ 2 milhões</span></li>
         <li><b>12% ao ano</b><span>demais produtores, até R$ 4 milhões</span></li>
@@ -164,7 +166,7 @@
         Traduzindo: <b>enquanto tiver recurso controlado, o juro tem teto</b>. Quando acabar, a
         mesma dívida só se compõe a juro negociado. Chegar cedo muda o preço, não só a chance.
       </p>
-      <p class="ressalva">
+      <p class="ressalva reveal">
         E a parte chata: a norma <b>autoriza</b> o banco, não obriga. Chegar cedo e com o pedido
         montado é o que está na sua mão.
       </p>
@@ -174,7 +176,7 @@
   <!-- FORMULÁRIO, na segunda dobra -->
   <section id="form" class="section section--form">
     <div class="container grid grid--2 grid--align-center">
-      <div>
+      <div class="reveal">
         <p class="eyebrow">Primeiro passo</p>
         <h2>Me conta como está a sua dívida.</h2>
         <p>
@@ -190,7 +192,7 @@
         </div>
       </div>
 
-      <form id="leadForm" class="form form--curto" data-origem="lp-renegociacao-divida-rural">
+      <form id="leadForm" class="form form--curto reveal" data-origem="lp-renegociacao-divida-rural">
         <label>
           Nome
           <input type="text" name="nome" autocomplete="name" required>
@@ -220,7 +222,7 @@
   <!-- QUEM CUIDA -->
   <section class="section section--cream">
     <div class="container grid grid--2 grid--align-center">
-      <div class="photo-frame">
+      <div class="photo-frame reveal">
         <img src="../assets/lucas-lavoura.jpg" alt="Lucas Cabral na lavoura, durante uma visita">
       </div>
       <div>
@@ -234,11 +236,11 @@
           Sou Lucas Cabral. Escritório em Jataí, atendimento em todo o Brasil, e quando o caso
           pede a conversa é na fazenda mesmo.
         </p>
-        <p class="pullstat">
+        <p class="pullstat reveal">
           <span><b>70 famílias</b> produtoras atendidas.</span>
           <span><b>R$ 200 mi</b> em dívida rural negociada.</span>
         </p>
-        <p class="pullstat__note">
+        <p class="pullstat__note reveal">
           Números aproximados de experiência acumulada, incluindo a atuação anterior à abertura
           do escritório. Cada caso depende dos fatos e dos documentos — não existe garantia de
           resultado.
@@ -255,11 +257,11 @@
   <!-- FAQ -->
   <section class="section section--dark">
     <div class="container">
-      <div class="section__intro">
+      <div class="section__intro reveal">
         <p class="eyebrow">Perguntas frequentes</p>
         <h2>O que o produtor pergunta na primeira conversa</h2>
       </div>
-      <div class="faq">
+      <div class="faq reveal">
         <details>
           <summary>Estou em atraso. Ainda dá?</summary>
           <div>
@@ -329,6 +331,6 @@
   <a href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site%20sobre%20a%20composi%C3%A7%C3%A3o%20de%20d%C3%ADvida." class="btn btn--primary">Falar no WhatsApp</a>
 </div>
 
-<script src="../script.js?v=20260911"></script>
+<script src="../script.js?v=20260911b"></script>
 </body>
 </html>

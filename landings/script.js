@@ -1,6 +1,10 @@
 /* Landings do Google Ads — comportamento compartilhado.
    Cada página só declara `data-origem` no <form>; o resto é igual. */
 (function () {
+  /* Sinal de vida pro guarda do <head>: o script chegou, a animação pode ficar.
+     Sem isso a marca .anima cai em 2,5s e a página fica visível e estática. */
+  document.documentElement.className += ' anima-ok';
+
   var LEADS_API_URL = 'https://lucas-cabral-painel.vercel.app/api/leads';
 
   /* ------------------------------------------------- Rastreio de origem */
