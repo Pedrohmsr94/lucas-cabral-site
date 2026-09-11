@@ -443,25 +443,51 @@ button.btn { font-family: var(--sans); }
 .photo-frame--wide { aspect-ratio: 1 / 1; }
 .photo-frame--wide img { object-position: center center; }
 
-.values__list {
-  list-style: none;
-  margin: 24px 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 12px;
-}
-
-.values__list li {
+/* Prova de experiência — entra no lugar da lista de valores genéricos.
+   Número em serifa, frase curta embaixo, régua fina em cima. Mesmo
+   vocabulário do bloco de números da página Sobre. */
+.pullstat {
   font-family: var(--serif);
   font-size: 1.02rem;
-  padding: 14px 8px;
-  text-align: center;
-  border: 1px solid var(--gold);
-  color: var(--bronze);
+  line-height: 1.5;
+  margin: 24px 0 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-light);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.section--dark .values__list li { color: var(--gold-light); }
+.pullstat span { display: block; }
+
+.pullstat b {
+  display: block;
+  font-weight: 400;
+  font-size: clamp(1.7rem, 3.6vw, 2.2rem);
+  line-height: 1;
+  margin-bottom: 3px;
+  color: #7E5719;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.section--dark .pullstat { border-top-color: rgba(243, 220, 176, 0.24); color: var(--text-on-dark); }
+.section--dark .pullstat b { color: var(--gold-light); }
+
+.pullstat__note {
+  margin: 16px 0 1.4rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-muted-light);
+  max-width: 58ch;
+}
+
+.section--dark .pullstat__note { color: var(--text-muted-dark); }
+
+@media (min-width: 640px) {
+  .pullstat { flex-direction: row; gap: 34px; }
+  .pullstat span { flex: 1; }
+}
+
 
 /* --------------------------------------------------------------- Form  */
 
@@ -786,9 +812,6 @@ button.btn { font-family: var(--sans); }
   .confronto__col { padding: 22px; }
 
   .steps { gap: 24px; }
-
-  .values__list { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .values__list li { padding: 12px 6px; font-size: 0.95rem; }
 
   .form { padding: 22px; }
   .form label { font-size: 0.95rem; }
