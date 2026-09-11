@@ -12,3 +12,4 @@ Allow: /
 Disallow: /landings/
 
 Sitemap: https://lucascabraladvogados.com.br/sitemap.xml
+Disallow: /_templates/
