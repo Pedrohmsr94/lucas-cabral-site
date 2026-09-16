@@ -49,10 +49,21 @@
     try { return sessionStorage.getItem('lc_rastreio') || ''; } catch (e) { return ''; }
   }
 
+  /* 2026-09-16: o GA4 mostrou que 25 dos 31 "cliques no WhatsApp" das landings
+     vinham de Prineville, Forest City, Fort Worth, Dublin e Luleå, que são os
+     data centers do Meta (o revisor de anúncio abre a página e aciona os
+     botões). Como clique_whatsapp agora é conversão principal no Google Ads,
+     um robô viraria "conversão". Humano não clica em 3 segundos; o revisor
+     clica em menos de 1. O clique continua abrindo o WhatsApp; só o evento
+     deixa de ser contado. */
+  var ABERTA_EM = Date.now();
+  var MINIMO_MS = 3000;
+
   document.addEventListener('click', function (ev) {
     var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
     if (!a) return;
     var href = a.getAttribute('href') || '';
+    if (Date.now() - ABERTA_EM < MINIMO_MS) return;
     if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp') !== -1) {
       window.dataLayer.push({ event: 'clique_whatsapp', pagina: location.pathname, rastreio: origem() });
     } else if (href.indexOf('tel:') === 0) {
