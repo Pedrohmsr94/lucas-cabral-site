@@ -3,78 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Renegociação de Dívida Rural até 12/11 | Lucas Cabral Advogados</title>
-<meta name="description" content="A Resolução CMN 5.340, de 4 de setembro de 2026, abriu composição de dívida rural para quem ficou inadimplente e estava fora da 5.330. Contratação até 12 de novembro. Escritório em Jataí, GO, com atendimento em todo o Brasil.">
+<title>Renegociação de Dívida Rural e MP 1.376 até 12/11 | Lucas Cabral Advogados</title>
+<meta name="description" content="MP 1.376 e Resolução CMN 5.340: seu contrato entra? Três critérios, o que o pedido precisa ter e contratação até 12 de novembro. Advogado de crédito rural em Jataí, GO, atende GO, MT e MS.">
 <meta name="robots" content="noindex, follow">
 <link rel="icon" href="../assets/logo-fundo-navy.png">
-<link rel="stylesheet" href="../styles.css?v=20260911b">
+<link rel="preload" as="image" href="../assets/hero-renegociacao.jpg" fetchpriority="high">
+<link rel="stylesheet" href="../styles.css?v=20260916">
 <script src="/rastreamento.js?v=20260911b" defer></script>
 <style>
-  /* Ajustes desta landing (2026-09-10): a versão anterior tinha 996 palavras e
-     8,4 telas de altura no celular, com o formulário a 74% da página. Zero lead
-     em 58 visitas de mídia paga. O que muda: página curta, contato acima da
-     dobra, WhatsApp fixo no rodapé e conteúdo sempre visível. */
+  /* Refeita em 2026-09-16 depois do diagnóstico: 453 visitas pagas e zero ação.
+     Ordem nova: promessa (casada com a palavra buscada) → ação (WhatsApp
+     primeiro, formulário de dois campos na segunda tela) → o que acontece
+     depois → critérios → quem cuida → detalhe → perguntas. Título, subtítulo
+     e mensagem do WhatsApp trocam por utm_content (variantes.js). */
 
-  /* 3. Faixa de prazo: o único número que muda a decisão hoje */
-  .prazo {
-    display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  .hero__tag {
+    display: inline-block; margin: 0 0 14px; padding: 6px 12px;
     border: 1px solid rgba(201,151,90,.55); border-radius: 2px;
-    padding: 8px 14px; margin-bottom: 20px;
+    color: #E4C089; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
   }
-  .prazo b { color: #E4C089; font-size: .82rem; letter-spacing: .16em; text-transform: uppercase; }
-  .prazo span { color: #D8D2C6; font-size: .92rem; }
+  .hero__actions { display: grid; gap: 10px; }
+  .hero__actions .btn { text-align: center; }
+  .hero__actions .btn--ghost { font-size: .95rem; padding: 13px 20px; }
+  @media (min-width: 780px) { .hero__actions { max-width: 30rem; } }
 
-  /* 4. Os três papéis, logo abaixo da dobra */
+  /* Segunda tela: o que acontece depois + formulário curto */
+  .depois { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 12px; }
+  .depois li { display: grid; grid-template-columns: 2rem 1fr; gap: 12px; align-items: start; }
+  .depois b { width: 2rem; height: 2rem; border-radius: 50%; background: #1B1E2C; color: #F0E6D2; font-family: var(--mono, monospace); font-size: .9rem; display: grid; place-items: center; }
+  .depois p { margin: 0; }
+  .form--curto label { display: block; margin-bottom: 12px; }
+  .form__nota { font-size: .92rem; margin-top: 12px; }
+
+  /* Os três critérios */
   .papeis { display: grid; gap: 14px; margin-top: 8px; }
   @media (min-width: 780px) { .papeis { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
-  .papel { border: 1px solid rgba(0,0,0,.12); border-left: 3px solid #B87249; padding: 16px 18px; background: #fff; }
+  .papel { border: 1px solid rgba(255,255,255,.14); border-left: 3px solid #B87249; padding: 16px 18px; background: rgba(255,255,255,.04); }
   .papel h3 { margin: 0 0 6px; font-size: 1.06rem; }
   .papel p { margin: 0; font-size: .96rem; }
-  .section--dark .papel { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.14); }
 
-  /* 5. Formulário curto, na segunda dobra */
-  .form--curto label { display: block; margin-bottom: 12px; }
-  .form__nota { font-size: .88rem; opacity: .8; margin-top: 10px; }
+  /* Prova, sem se desfazer */
+  .prova { display: grid; gap: 6px 28px; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); margin: 18px 0 8px; }
+  .prova b { display: block; font-family: var(--serif, Georgia, serif); font-size: 1.7rem; color: #7E5719; font-weight: 500; line-height: 1.1; }
+  .prova span { font-size: .95rem; }
 
-  /* 11. Celular. O produtor lê isso no telefone, no campo: o título estava
-     ocupando quatro linhas e o corpo saindo em cinza pequeno. Inverte —
-     título menor, corpo maior. */
-  @media (max-width: 640px) {
-    .papel p, .papel h3 { font-size: 1.02rem; }
-    .condicoes span { font-size: 1.02rem; }
-    .form--curto label { font-size: 1rem; }
-  }
-
-  /* Segundo prazo da pagina, sobre fundo claro */
-  .prazo--claro {
-    margin-top: 26px;
-    border-color: rgba(168,121,47,.55);
-    background: rgba(201,151,90,.09);
-  }
-  .prazo--claro b { color: #8A5F22; }
-  .prazo--claro span { color: #3B3628; }
-
-  /* 9. Condições: taxa por porte, em régua */
-  .condicoes { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 0; }
-  .condicoes li {
-    display: grid; grid-template-columns: 8.5rem 1fr; gap: 4px 20px; align-items: baseline;
-    padding: 14px 0; border-top: 1px solid rgba(0,0,0,.12);
-  }
+  /* Condições: taxa por porte, em régua (detalhe, no fim) */
+  .condicoes { list-style: none; margin: 22px 0 0; padding: 0; }
+  .condicoes li { display: grid; grid-template-columns: 8.5rem 1fr; gap: 4px 20px; align-items: baseline; padding: 12px 0; border-top: 1px solid rgba(0,0,0,.12); }
   .condicoes li:last-child { border-bottom: 1px solid rgba(0,0,0,.12); }
-  .condicoes b { font-size: 1.35rem; color: #7E5719; font-weight: 400; }
+  .condicoes b { font-size: 1.3rem; color: #7E5719; font-weight: 400; }
   .condicoes span { font-size: .96rem; }
-  @media (max-width: 560px) {
-    .condicoes li { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 560px) { .condicoes li { grid-template-columns: 1fr; } }
 
-  /* 7. Etapas em linha única, sem card */
-  .etapas { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
-  .etapas li { display: grid; grid-template-columns: 2.4rem 1fr; gap: 4px 14px; padding: 12px 0; border-top: 1px solid rgba(0,0,0,.1); }
-  .etapas li:first-child { border-top: 0; }
-  .etapas b { font-family: var(--mono, monospace); color: #7E5719; font-size: .9rem; }
-  .etapas p { margin: 0; font-size: .96rem; }
-  .etapas h3 { margin: 0; font-size: 1.02rem; }
-  .section--dark .etapas li { border-color: rgba(255,255,255,.14); }
+  .fecho { text-align: center; }
+  .fecho .hero__actions { margin: 18px auto 0; max-width: 30rem; }
+
+  @media (max-width: 640px) {
+    .papel p, .papel h3, .condicoes span, .form--curto label { font-size: 1.02rem; }
+    .hero__tag { font-size: .74rem; }
+  }
 </style>
 <script>/* animação só se o script estiver vivo; senão a página fica visível */
 (function(d){d.className+=' anima';setTimeout(function(){if(d.className.indexOf('anima-ok')<0)d.className=d.className.replace(' anima','');},2500);})(document.documentElement);</script>
@@ -87,13 +74,13 @@
       <img src="../assets/simbolo.png" alt="" class="brand__mark">
       <span class="brand__name">Lucas Cabral<em>Advogados</em></span>
     </div>
-    <a href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site%20sobre%20renegocia%C3%A7%C3%A3o.%20Minha%20c%C3%A9dula%20%C3%A9%20de%20" class="btn btn--ghost header__cta">WhatsApp</a>
+    <a data-v="wa" href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site.%20Minha%20d%C3%ADvida%20%C3%A9%20com%20o%20banco%20" class="btn btn--ghost header__cta">WhatsApp</a>
   </div>
 </header>
 
 <main>
 
-  <!-- HERO -->
+  <!-- HERO: título, subtítulo, botão e mensagem trocam por utm_content -->
   <section class="hero" id="hero">
     <div class="hero__bg" id="heroBg">
       <img src="../assets/hero-renegociacao.jpg" alt="" class="hero__bg-img" fetchpriority="high">
@@ -101,27 +88,128 @@
     <div class="hero__overlay"></div>
     <div class="container hero__inner">
       <div class="hero__text">
-        <div class="prazo">
-          <b>Prazo</b>
-          <span>Contratação até 12 de novembro de 2026.</span>
-        </div>
-        <h1>Quem ficou inadimplente em agosto estava fora. Desde 8 de setembro, não está mais.</h1>
-        <p class="hero__sub">
-          Saiu norma nova. Ela alcança dívida que a de julho deixava de fora — inclusive a de
-          quem pediu os trinta dias e não conseguiu fechar a tempo. Se é o seu caso, dá pra
-          entrar até 12 de novembro.
+        <p class="hero__tag" data-v="tag">Contratação até 12 de novembro de 2026</p>
+        <h1 data-v="h1">Dívida rural com o banco? O pedido tem que chegar pronto, e o prazo da MP vai até 12 de novembro.</h1>
+        <p class="hero__sub" data-v="sub">
+          Laudo, protocolo e a cédula certa. Me diz como está a sua dívida e eu confiro com você se o seu contrato entra.
         </p>
         <div>
           <div class="hero__actions">
-            <a href="#form" class="btn btn--primary">Contar meu caso</a>
+            <a data-v="wa" href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site.%20Minha%20d%C3%ADvida%20%C3%A9%20com%20o%20banco%20" class="btn btn--primary"><span data-v="cta">Quero saber se meu contrato entra</span></a>
+            <a href="#form" class="btn btn--ghost"><span data-v="cta2">Prefere que eu te ligue? Deixe nome e telefone</span></a>
           </div>
-          <p class="hero__note">Lucas Cabral, OAB/GO 67.854. Escritório em Jataí.</p>
+          <p class="hero__note">Lucas Cabral, OAB/GO 67.854. Escritório em Jataí, atende GO, MT e MS.</p>
         </div>
       </div>
     </div>
   </section>
+  <script type="application/json" id="variantes">
+  {
+    "_padrao": {
+      "tag": "Contratação até 12 de novembro de 2026",
+      "h1": "Dívida rural com o banco? O pedido tem que chegar pronto, e o prazo da MP vai até 12 de novembro.",
+      "sub": "Laudo, protocolo e a cédula certa. Me diz como está a sua dívida e eu confiro com você se o seu contrato entra.",
+      "cta": "Quero saber se meu contrato entra",
+      "msg": "Oi, Lucas. Vim {origem}. Minha dívida é com o banco ___ e está ___."
+    },
+    "mp1376": {
+      "alias": ["mp-1376", "mp_1376"],
+      "tag": "MP 1.376: contratação até 12 de novembro",
+      "h1": "MP 1.376: seu contrato entra? São três critérios. Dá pra saber em um minuto.",
+      "sub": "Duas safras perdidas, queda de 30% na renda, clima ou preço. Se bater, entra. Me diz como está a sua dívida e eu confiro com você.",
+      "cta": "Quero saber se meu contrato entra",
+      "msg": "Oi, Lucas. Vim {origem} sobre a MP 1376. Minha dívida é com o banco ___ e está ___."
+    },
+    "renegociacao": {
+      "alias": ["renegociação"],
+      "tag": "Renegociação de dívida rural",
+      "h1": "Renegociar a dívida rural começa pelo número da fazenda, não pela proposta do banco.",
+      "sub": "O pedido vai por escrito, protocolado e com laudo. Pedido genérico volta negado. Me conta como está a sua dívida e eu te digo o que precisa estar pronto.",
+      "cta": "Quero saber o que precisa estar pronto",
+      "msg": "Oi, Lucas. Vim {origem} sobre renegociação. Minha dívida é com o banco ___ e está ___."
+    },
+    "alongamento": {
+      "alias": ["prorrogacao", "prorrogação"],
+      "tag": "Alongamento e prorrogação",
+      "h1": "O banco pediu garantia nova pra alongar? Antes de assinar, confira juro, prazo e o que entrou de garantia.",
+      "sub": "Prorrogação do MCR e a linha nova da MP são pedidos diferentes. Me manda a proposta que o banco te deu e eu leio com você.",
+      "cta": "Quero conferir a proposta antes de assinar",
+      "msg": "Oi, Lucas. Vim {origem}. O banco me deu uma proposta de alongamento e quero conferir antes de assinar."
+    },
+    "gestao": {
+      "alias": ["trf02", "card-conta", "carr-conta", "conta"],
+      "tag": "Renegociação com gestão financeira",
+      "h1": "Prazo e juro novo só resolvem se a fazenda fechar número depois.",
+      "sub": "Sacas por hectare contra o custo real do hectare. É por aí que eu começo. Me manda o valor da parcela e a área plantada.",
+      "cta": "Quero fazer essa conta com o Lucas",
+      "msg": "Oi, Lucas. Vi o anúncio da conta. Minha parcela é de R$ ___ e planto ___ hectares."
+    },
+    "garantia": {
+      "alias": ["proposta", "carr-proposta"],
+      "tag": "Antes de assinar a proposta do banco",
+      "h1": "Renegociou e a fazenda entrou de garantia num contrato que antes não tinha? Isso tem regra.",
+      "sub": "Antes de assinar a proposta: instrumento, taxa, garantia e fonte do recurso. Me manda a proposta que o banco te deu.",
+      "cta": "Quero conferir a proposta antes de assinar",
+      "msg": "Oi, Lucas. Vi o anúncio da garantia. O banco pediu garantia nova e quero conferir antes de assinar."
+    },
+    "laudo": {
+      "alias": ["v6", "criativo-06", "v1"],
+      "tag": "O que o pedido precisa ter",
+      "h1": "Foto da lavoura seca não é laudo. O banco arquiva foto.",
+      "sub": "Laudo com número por talhão e data, pedido protocolado antes do vencimento, a cédula certa. Se você já mandou só a foto, me chama.",
+      "cta": "Quero saber o que falta no meu pedido",
+      "msg": "Oi, Lucas. Vi o anúncio do laudo. Mandei foto pro banco e quero saber o que falta no pedido."
+    },
+    "aval": {
+      "alias": ["card-aval"],
+      "tag": "Aval e garantia",
+      "h1": "A dívida é sua, mas o nome que vai sujar é o de quem avalizou?",
+      "sub": "O aval acompanha a cédula, e o pedido protocolado suspende a cobrança pra todos. Me conta como está a dívida e quem assinou junto.",
+      "cta": "Quero saber como proteger quem avalizou",
+      "msg": "Oi, Lucas. Vi o anúncio do aval. Minha dívida é com o banco ___ e tem avalista."
+    }
+  }
+  </script>
+  <script src="../variantes.js?v=20260916"></script>
 
-  <!-- QUEM SE ENCAIXA -->
+  <!-- O QUE ACONTECE DEPOIS + FORMULÁRIO CURTO (segunda tela) -->
+  <section id="form" class="section section--form">
+    <div class="container grid grid--2 grid--align-center">
+      <div class="reveal">
+        <p class="eyebrow">O que acontece depois</p>
+        <h2>Três passos. Nenhum deles é assinar nada.</h2>
+        <ol class="depois">
+          <li><b>1</b><p data-v="passo1">Você manda a mensagem no WhatsApp, ou deixa nome e telefone logo abaixo.</p></li>
+          <li><b>2</b><p>O Lucas responde em horário comercial, em até 2 horas, pelo WhatsApp.</p></li>
+          <li><b>3</b><p>Uma conversa de 15 minutos diz se o seu caso entra e o que precisa estar pronto. Se o caso pedir, a próxima conversa é na fazenda.</p></li>
+        </ol>
+        <div class="form__signature">
+          <img src="../assets/lucas-lavoura.jpg" alt="Lucas Cabral" class="form__signature-photo" loading="lazy">
+          <div>
+            <strong>Lucas Cabral</strong>
+            <span>Advogado do produtor rural, OAB/GO 67.854</span>
+          </div>
+        </div>
+      </div>
+
+      <form id="leadForm" class="form form--curto reveal" data-origem="lp-renegociacao-divida-rural">
+        <p class="eyebrow">Prefere que eu te ligue?</p>
+        <label>
+          Nome
+          <input type="text" name="nome" autocomplete="name" required>
+        </label>
+        <label>
+          WhatsApp
+          <input type="tel" name="telefone" autocomplete="tel" inputmode="tel" required>
+        </label>
+        <button type="submit" class="btn btn--primary btn--block">Quero que o Lucas me chame</button>
+        <p class="form__nota">Só nome e telefone. O resto a gente conversa. Ou chame agora: <a data-v="wa" href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site.%20Minha%20d%C3%ADvida%20%C3%A9%20com%20o%20banco%20">(64) 99208-6744</a></p>
+        <p id="leadFormFeedback" class="form__feedback" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- OS TRÊS CRITÉRIOS -->
   <section class="section section--dark">
     <div class="container">
       <div class="section__intro reveal">
@@ -139,21 +227,54 @@
         </div>
         <div class="papel reveal">
           <h3>Clima ou preço</h3>
-          <p>Seca, geada, granizo, chuva demais — ou <b>queda no preço</b>.</p>
+          <p>Seca, geada, granizo, chuva demais, ou <b>queda no preço</b>.</p>
         </div>
       </div>
       <p class="ressalva reveal">
         Os três juntos, comprovados por laudo de profissional habilitado. Foto de lavoura seca
-        não é laudo — e vai aparecer gente te vendendo laudo pronto. Confere quem assina.
+        não é laudo, e vai aparecer gente te vendendo laudo pronto. Confere quem assina.
+      </p>
+      <p class="ressalva reveal">
+        Ficou em atraso? Desde 8 de setembro a norma nova alcança quem a de julho deixava de fora,
+        inclusive quem pediu os trinta dias e não fechou a tempo. Quem decide agora é o
+        enquadramento e o laudo, não o atraso.
       </p>
     </div>
   </section>
 
-  <!-- CONDICOES E URGENCIA REAL -->
+  <!-- QUEM CUIDA -->
+  <section class="section section--cream">
+    <div class="container grid grid--2 grid--align-center">
+      <div class="photo-frame reveal">
+        <img src="../assets/lucas-lavoura.jpg" alt="Lucas Cabral na lavoura, durante uma visita" loading="lazy">
+      </div>
+      <div>
+        <p class="eyebrow">Quem cuida do seu caso</p>
+        <h2>Eu começo pelo número da fazenda, não pela proposta do banco.</h2>
+        <p>
+          Prazo e juro novo só resolvem se o caixa fechar depois. Se a fazenda não fecha número
+          por safra, alongar só empurra a conta pra frente. Por isso a renegociação aqui vem com
+          a gestão financeira junto.
+        </p>
+        <p>
+          Sou Lucas Cabral. Escritório em Jataí, atendo Goiás, Mato Grosso e Mato Grosso do Sul,
+          e quando o caso pede a conversa é na fazenda mesmo.
+        </p>
+        <div class="prova reveal">
+          <div><b>70 famílias</b><span>produtoras atendidas</span></div>
+          <div><b>R$ 200 mi</b><span>em dívida rural negociada</span></div>
+          <div><b>OAB/GO 67.854</b><span>Jataí, Goiás</span></div>
+        </div>
+        <p class="pullstat__note">Experiência acumulada, incluindo a atuação anterior à abertura do escritório.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE ESTÁ NA MESA (detalhe) -->
   <section class="section section--cream">
     <div class="container">
       <div class="section__intro reveal">
-        <p class="eyebrow">O que está na mesa</p>
+        <p class="eyebrow">Pra quem quer conferir o detalhe</p>
         <h2>Enquanto o recurso controlado durar, o juro tem teto.</h2>
       </div>
       <ul class="condicoes reveal">
@@ -170,87 +291,6 @@
         E a parte chata: a norma <b>autoriza</b> o banco, não obriga. Chegar cedo e com o pedido
         montado é o que está na sua mão.
       </p>
-    </div>
-  </section>
-
-  <!-- FORMULÁRIO, na segunda dobra -->
-  <section id="form" class="section section--form">
-    <div class="container grid grid--2 grid--align-center">
-      <div class="reveal">
-        <p class="eyebrow">Primeiro passo</p>
-        <h2>Me conta como está a sua dívida.</h2>
-        <p>
-          Dois campos. Eu confiro se o seu caso entra e te digo o que precisa estar pronto
-          antes de 12 de novembro.
-        </p>
-        <div class="form__signature">
-          <img src="../assets/lucas-lavoura.jpg" alt="Lucas Cabral" class="form__signature-photo">
-          <div>
-            <strong>Lucas Cabral</strong>
-            <span>Advogado do produtor rural, OAB/GO 67.854</span>
-          </div>
-        </div>
-      </div>
-
-      <form id="leadForm" class="form form--curto reveal" data-origem="lp-renegociacao-divida-rural">
-        <label>
-          Nome
-          <input type="text" name="nome" autocomplete="name" required>
-        </label>
-        <label>
-          WhatsApp
-          <input type="tel" name="telefone" autocomplete="tel" inputmode="tel" required>
-        </label>
-        <label>
-          Como está a dívida hoje?
-          <select name="fase" data-rotulo="Situação da dívida">
-            <option value="">Selecione</option>
-            <option>Em dia, mas apertando</option>
-            <option>Atrasada, sem cobrança judicial</option>
-            <option>Notificado ou protestado pelo banco</option>
-            <option>Já existe ação judicial</option>
-            <option>Não sei dizer</option>
-          </select>
-        </label>
-        <button type="submit" class="btn btn--primary btn--block">Enviar pro Lucas</button>
-        <p class="form__nota">Ou me chama no WhatsApp: <a href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site.%20Minha%20c%C3%A9dula%20%C3%A9%20de%20">(64) 99208-6744</a></p>
-        <p id="leadFormFeedback" class="form__feedback" role="status" aria-live="polite"></p>
-      </form>
-    </div>
-  </section>
-
-  <!-- QUEM CUIDA -->
-  <section class="section section--cream">
-    <div class="container grid grid--2 grid--align-center">
-      <div class="photo-frame reveal">
-        <img src="../assets/lucas-lavoura.jpg" alt="Lucas Cabral na lavoura, durante uma visita">
-      </div>
-      <div>
-        <p class="eyebrow">Quem cuida do seu caso</p>
-        <h2>Eu começo pelo número da fazenda, não pela proposta do banco.</h2>
-        <p>
-          Prazo e juro novo só resolvem se o caixa fechar depois. Se a fazenda não fecha número
-          por safra, alongar só empurra a conta pra frente.
-        </p>
-        <p>
-          Sou Lucas Cabral. Escritório em Jataí, atendimento em todo o Brasil, e quando o caso
-          pede a conversa é na fazenda mesmo.
-        </p>
-        <p class="pullstat reveal">
-          <span><b>70 famílias</b> produtoras atendidas.</span>
-          <span><b>R$ 200 mi</b> em dívida rural negociada.</span>
-        </p>
-        <p class="pullstat__note reveal">
-          Números aproximados de experiência acumulada, incluindo a atuação anterior à abertura
-          do escritório. Cada caso depende dos fatos e dos documentos — não existe garantia de
-          resultado.
-        </p>
-
-        <p>
-          Se o que você leu faz sentido, procure um profissional da sua confiança — ou me chama,
-          que eu confiro com você.
-        </p>
-      </div>
     </div>
   </section>
 
@@ -280,8 +320,16 @@
         <details>
           <summary>Meu banco disse que não tem a linha.</summary>
           <div>
-            <p>Pode mesmo não ter — a norma autoriza, não obriga. Pede a recusa por escrito, com
+            <p>Pode mesmo não ter: a norma autoriza, não obriga. Pede a recusa por escrito, com
             o motivo. Conversa com gerente não deixa nada registrado.</p>
+          </div>
+        </details>
+        <details>
+          <summary>A dívida é do meu pai. Posso falar por ele?</summary>
+          <div>
+            <p>Pode, e é comum: quem manda a mensagem é o filho ou a esposa, e a decisão é da
+            família. A primeira conversa pode ser com você. Pra andar, em algum momento o titular
+            da dívida entra.</p>
           </div>
         </details>
         <details>
@@ -289,16 +337,31 @@
           <div>
             <p>FCO, FNE e FNO entram, no mesmo 12 de novembro. CPR e barter seguem regra própria
             e costumam ficar de fora. Isso não é discurso contra barter, que é instrumento
-            legítimo e muito usado — é só que o caminho é outro, e é melhor saber antes.</p>
+            legítimo e muito usado. É só que o caminho é outro, e é melhor saber antes.</p>
           </div>
         </details>
         <details>
           <summary>Quanto custa?</summary>
           <div>
             <p>Combino por escrito antes de começar, nos parâmetros da tabela da OAB/GO. Um
-            passivo com um credor e um com seis não dão o mesmo trabalho.</p>
+            passivo com um credor e um com seis não dão o mesmo trabalho. A primeira conversa
+            não tem custo.</p>
           </div>
         </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FECHO -->
+  <section class="section section--cream fecho">
+    <div class="container">
+      <div class="section__intro reveal">
+        <h2>Se você leu até aqui, o próximo passo é uma mensagem.</h2>
+        <p>Diz como está a sua dívida. Eu confiro se entra e te digo o que precisa estar pronto.</p>
+      </div>
+      <div class="hero__actions reveal">
+        <a data-v="wa" href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site.%20Minha%20d%C3%ADvida%20%C3%A9%20com%20o%20banco%20" class="btn btn--primary">Falar com o Lucas no WhatsApp</a>
+        <a href="#form" class="btn btn--ghost" style="color:#7E5719;border-color:#B87249">Prefere que eu te ligue?</a>
       </div>
     </div>
   </section>
@@ -320,17 +383,18 @@
     <div class="footer__legal">
       <p>
         Conteúdo informativo, sem promessa de resultado, conforme o Código de Ética da OAB e o
-        Provimento 205/2021. Base: Resoluções CMN 5.330/2026 e 5.340/2026. Enquadramento e
-        concessão dependem da instituição financeira.
+        Provimento 205/2021. Base: MP 1.376/2026, Resoluções CMN 5.330/2026 e 5.340/2026.
+        Enquadramento e concessão dependem da instituição financeira. Números de experiência
+        são aproximados e cada caso depende dos fatos e dos documentos.
       </p>
     </div>
   </div>
 </footer>
 
 <div class="sticky-cta" id="stickyCta">
-  <a href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site%20sobre%20a%20composi%C3%A7%C3%A3o%20de%20d%C3%ADvida." class="btn btn--primary">Falar no WhatsApp</a>
+  <a data-v="wa" href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site.%20Minha%20d%C3%ADvida%20%C3%A9%20com%20o%20banco%20" class="btn btn--primary">Falar no WhatsApp</a>
 </div>
 
-<script src="../script.js?v=20260911b"></script>
+<script src="../script.js?v=20260916"></script>
 </body>
 </html>

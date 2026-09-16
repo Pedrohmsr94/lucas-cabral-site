@@ -3,12 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Advogado de Contratos Agrários — Arrendamento, Parceria e Barter | Lucas Cabral Advogados</title>
-<meta name="description" content="Elaboração e revisão de contrato de arrendamento, parceria agrícola, barter e compra e venda de imóvel rural. Preço, prazo, garantia e rescisão conferidos antes da assinatura. Escritório em Jataí, GO — atendimento em todo o Brasil.">
+<title>Advogado de Contratos Agrários, Arrendamento, Parceria e Barter | Lucas Cabral Advogados</title>
+<meta name="description" content="Elaboração e revisão de contrato de arrendamento, parceria agrícola, barter e compra e venda de imóvel rural. Preço, prazo, garantia e rescisão conferidos antes da assinatura. Escritório em Jataí, GO. Atende GO, MT e MS.">
 <meta name="robots" content="noindex, follow">
 <link rel="icon" href="../assets/logo-fundo-navy.png">
-<link rel="stylesheet" href="../styles.css?v=20260911b">
+<link rel="preload" as="image" href="../assets/hero-contratos.jpg" fetchpriority="high">
+<link rel="stylesheet" href="../styles.css?v=20260916">
 <script src="/rastreamento.js?v=20260911b" defer></script>
+<style>
+  /* 2026-09-16: primeira tela com WhatsApp, formulário de dois campos na segunda tela */
+  .hero__tag { display: inline-block; margin: 0 0 14px; padding: 6px 12px; border: 1px solid rgba(201,151,90,.55); border-radius: 2px; color: #E4C089; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; }
+  .hero__actions { display: grid; gap: 10px; }
+  .hero__actions .btn { text-align: center; }
+  .hero__actions .btn--ghost { font-size: .95rem; padding: 13px 20px; }
+  @media (min-width: 780px) { .hero__actions { max-width: 30rem; } }
+  .depois { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 12px; }
+  .depois li { display: grid; grid-template-columns: 2rem 1fr; gap: 12px; align-items: start; }
+  .depois b { width: 2rem; height: 2rem; border-radius: 50%; background: #1B1E2C; color: #F0E6D2; font-family: var(--mono, monospace); font-size: .9rem; display: grid; place-items: center; }
+  .depois p { margin: 0; }
+  .form--curto label { display: block; margin-bottom: 12px; }
+  .form__nota { font-size: .92rem; margin-top: 12px; }
+  .prova { display: grid; gap: 6px 28px; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); margin: 18px 0 8px; }
+  .prova b { display: block; font-family: var(--serif, Georgia, serif); font-size: 1.7rem; color: #7E5719; font-weight: 500; line-height: 1.1; }
+  .prova span { font-size: .95rem; }
+  .fecho { text-align: center; }
+  .fecho .hero__actions { margin: 18px auto 0; max-width: 30rem; }
+</style>
 <script>/* animação só se o script estiver vivo; senão a página fica visível */
 (function(d){d.className+=' anima';setTimeout(function(){if(d.className.indexOf('anima-ok')<0)d.className=d.className.replace(' anima','');},2500);})(document.documentElement);</script>
 </head>
@@ -20,13 +40,13 @@
       <img src="../assets/simbolo.png" alt="" class="brand__mark">
       <span class="brand__name">Lucas Cabral<em>Advogados</em></span>
     </div>
-    <a href="#form" class="btn btn--ghost header__cta">Analisar meu contrato</a>
+    <a data-v="wa" href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site.%20Tenho%20um%20contrato%20agr%C3%A1rio%20pra%20conferir." class="btn btn--ghost header__cta">WhatsApp</a>
   </div>
 </header>
 
 <main>
 
-  <!-- HERO — espelha o anúncio: "Antes de Assinar, Confira" / "Contrato Bem Feito Antes" -->
+  <!-- HERO, espelha o anúncio: "Antes de Assinar, Confira" / "Contrato Bem Feito Antes" -->
   <section class="hero" id="hero">
     <div class="hero__bg" id="heroBg">
       <img src="../assets/hero-contratos.jpg" alt="" class="hero__bg-img" fetchpriority="high">
@@ -34,19 +54,91 @@
     <div class="hero__overlay"></div>
     <div class="container hero__inner">
       <div class="hero__text">
-        <h1 class="reveal">Contrato mal escrito hoje é processo na safra que vem.</h1>
-        <p class="hero__sub reveal">
-          Arrendamento, parceria agrícola, barter e compra e venda de imóvel rural.
-          Preço, prazo, garantia e rescisão resolvidos no papel — antes de a discussão
-          existir.
+        <p class="hero__tag" data-v="tag">Contrato antes do plantio</p>
+        <h1 data-v="h1">Contrato mal escrito hoje é processo na safra que vem.</h1>
+        <p class="hero__sub" data-v="sub">
+          Arrendamento, parceria, comodato, barter e compra e venda de imóvel rural. Preço,
+          prazo, garantia e rescisão resolvidos no papel, antes de a discussão existir.
         </p>
-        <div class="reveal">
+        <div>
           <div class="hero__actions">
-            <a href="#form" class="btn btn--primary">Quero uma análise do contrato</a>
+            <a data-v="wa" href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site.%20Tenho%20um%20contrato%20agr%C3%A1rio%20pra%20conferir." class="btn btn--primary"><span data-v="cta">Quero a leitura do meu contrato</span></a>
+            <a href="#form" class="btn btn--ghost"><span data-v="cta2">Prefere que eu te ligue? Deixe nome e telefone</span></a>
           </div>
-          <p class="hero__note">Elaboração e revisão. Escritório em Jataí, GO — atendimento em todo o Brasil.</p>
+          <p class="hero__note">Elaboração e revisão. Lucas Cabral, OAB/GO 67.854. Jataí, atende GO, MT e MS.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <script type="application/json" id="variantes">
+  {
+    "_padrao": {
+      "tag": "Contrato antes do plantio",
+      "h1": "Contrato mal escrito hoje é processo na safra que vem.",
+      "sub": "Arrendamento, parceria, comodato, barter e compra e venda de imóvel rural. Preço, prazo, garantia e rescisão resolvidos no papel, antes de a discussão existir.",
+      "cta": "Quero a leitura do meu contrato",
+      "msg": "Oi, Lucas. Vim {origem}. Tenho um contrato agrário pra conferir."
+    },
+    "parceria-comodato": {
+      "alias": ["parceria", "comodato"],
+      "tag": "Parceria, comodato e compra e venda",
+      "h1": "Parceria divide risco e resultado; arrendamento tem preço fixo. Errar a escolha sai caro.",
+      "sub": "Comodato rural também precisa de prazo, uso e devolução no papel. E compra e venda de fazenda começa pela matrícula. Me manda o contrato, ou conta o que vocês combinaram.",
+      "cta": "Quero saber qual contrato é o meu caso",
+      "msg": "Oi, Lucas. Vim {origem} sobre contrato de parceria ou comodato. Quero conferir antes de assinar."
+    },
+    "compra-venda": {
+      "alias": ["compra", "venda", "matricula"],
+      "tag": "Compra e venda de imóvel rural",
+      "h1": "Compra e venda de fazenda começa pela matrícula, não pelo preço.",
+      "sub": "Cadeia dominial, garantia morta na matrícula, área e confrontação. O que conferir antes de pagar. Me manda a matrícula e a minuta.",
+      "cta": "Quero conferir antes de pagar",
+      "msg": "Oi, Lucas. Vim {origem}. Estou comprando (ou vendendo) um imóvel rural e quero conferir a matrícula e o contrato."
+    }
+  }
+  </script>
+  <script src="../variantes.js?v=20260916"></script>
+
+  <!-- O QUE ACONTECE DEPOIS + FORMULÁRIO CURTO -->
+  <section id="form" class="section section--form">
+    <div class="container grid grid--2 grid--align-center">
+      <div class="reveal">
+        <p class="eyebrow">O que acontece depois</p>
+        <h2>Mande o contrato antes de assinar.</h2>
+        <ol class="depois">
+          <li><b>1</b><p>Você manda o contrato (foto ou PDF) no WhatsApp, ou deixa nome e telefone logo abaixo.</p></li>
+          <li><b>2</b><p>O Lucas responde em horário comercial, em até 2 horas, pelo WhatsApp.</p></li>
+          <li><b>3</b><p>Uma conversa de 15 minutos diz que operação é essa de verdade, o que está escrito, o que falta e o que sai do seu lado.</p></li>
+        </ol>
+        <div class="form__signature">
+          <img src="../assets/lucas-lavoura.jpg" alt="Lucas Cabral" class="form__signature-photo" loading="lazy">
+          <div>
+            <strong>Lucas Cabral</strong>
+            <span>Advogado do produtor rural · OAB/GO 67.854</span>
+          </div>
+        </div>
+        <div class="prova reveal">
+          <div><b>70 famílias</b><span>produtoras atendidas</span></div>
+          <div><b>R$ 200 mi</b><span>em dívida rural negociada</span></div>
+        </div>
+        <p class="pullstat__note">Experiência acumulada, incluindo a atuação anterior à abertura do escritório.</p>
+      </div>
+
+      <form id="leadForm" class="form form--curto reveal" data-origem="lp-contratos-agrarios">
+        <p class="eyebrow">Prefere que eu te ligue?</p>
+        <label>
+          Nome
+          <input type="text" name="nome" autocomplete="name" required>
+        </label>
+        <label>
+          WhatsApp
+          <input type="tel" name="telefone" autocomplete="tel" inputmode="tel" required>
+        </label>
+        <button type="submit" class="btn btn--primary btn--block">Quero que o Lucas me chame</button>
+        <p class="form__nota">Só nome e telefone. O resto a gente conversa. Ou mande o contrato agora: <a data-v="wa" href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site.%20Tenho%20um%20contrato%20agr%C3%A1rio%20pra%20conferir.">(64) 99208-6744</a></p>
+        <p id="leadFormFeedback" class="form__feedback" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 
@@ -61,13 +153,13 @@
         <div class="card reveal">
           <h3>Arrendamento</h3>
           <p>
-            Preço, prazo, renovação, benfeitoria e devolução da área. O Estatuto da Terra impõe prazo mínimo e preferência na venda — o contrato não passa por cima disso.
+            Preço, prazo, renovação, benfeitoria e devolução da área. O Estatuto da Terra impõe prazo mínimo e preferência na venda, o contrato não passa por cima disso.
           </p>
         </div>
         <div class="card reveal">
           <h3>Parceria agrícola</h3>
           <p>
-            Divide-se resultado, não se paga aluguel. Parceria escrita como arrendamento disfarçado sai cara — inclusive no imposto.
+            Divide-se resultado, não se paga aluguel. Parceria escrita como arrendamento disfarçado sai cara, inclusive no imposto.
           </p>
         </div>
         <div class="card reveal">
@@ -79,7 +171,7 @@
         <div class="card reveal">
           <h3>Compra e venda de imóvel rural</h3>
           <p>
-            Matrícula, ônus, área real contra área registrada, CAR, inventário pendente. Problema de matrícula não aparece no dia da assinatura — aparece anos depois.
+            Matrícula, ônus, área real contra área registrada, CAR, inventário pendente. Problema de matrícula não aparece no dia da assinatura, aparece anos depois.
           </p>
         </div>
       </div>
@@ -97,7 +189,7 @@
         </p>
         <ul class="checklist">
           <li>Preço: em saca ou em real, qual indexador, qual praça de referência</li>
-          <li>Garantias: aval, penhor da safra, hipoteca, CPR — e a ordem de execução</li>
+          <li>Garantias: aval, penhor da safra, hipoteca, CPR, e a ordem de execução</li>
           <li>Prazo, renovação automática e prazo mínimo legal</li>
           <li>Rescisão, multa e o que acontece com a lavoura no meio do ciclo</li>
           <li>Quebra de safra, seca e caso fortuito: quem assume o risco</li>
@@ -109,7 +201,7 @@
           <p>
             Preço amarrado em saca sem dizer qual praça, qual data de cotação e o que
             acontece se o produto não for entregue. Três linhas a mais no contrato
-            resolvem — e três linhas a menos viram perícia.
+            resolvem, e três linhas a menos viram perícia.
           </p>
           <p>
             
@@ -129,7 +221,7 @@
         <p class="eyebrow">Quem cuida do seu caso</p>
         <h2>Lucas Cabral, advogado do produtor rural.</h2>
         <p>
-          Sou Lucas Cabral. Escritório em Jataí — GO, atendimento em todo o Brasil. Quando o caso pede, a conversa é na fazenda, não na sala.
+          Sou Lucas Cabral. Escritório em Jataí, GO, atendimento em todo o Brasil. Quando o caso pede, a conversa é na fazenda, não na sala.
         </p>
         <p>
           Minha leitura de contrato não é acadêmica. Sai de acompanhar o Plano Safra, o STJ e o que está de fato sendo assinado na região.
@@ -140,7 +232,7 @@
         </p>
         <p class="pullstat__note">
           Números aproximados de experiência acumulada, incluindo a atuação anterior à abertura
-          do escritório. Cada caso depende dos fatos e dos documentos — não existe garantia de
+          do escritório. Cada caso depende dos fatos e dos documentos, não existe garantia de
           resultado.
         </p>
       </div>
@@ -183,69 +275,26 @@
     </div>
   </section>
 
-  <!-- FORMULÁRIO -->
-  <section id="form" class="section section--form">
-    <div class="container grid grid--2 grid--align-center">
-      <div class="reveal">
-        <p class="eyebrow">Primeiro passo</p>
-        <h2>Mande o contrato antes de assinar.</h2>
-        <p>
-          Preenche abaixo que eu te procuro pra entender a operação. Se já tem minuta na mesa, melhor — a conversa começa em cima dela.
-        </p>
-        <div class="form__signature">
-          <img src="../assets/lucas-lavoura.jpg" alt="Lucas Cabral" class="form__signature-photo">
-          <div>
-            <strong>Lucas Cabral</strong>
-            <span>Advogado do produtor rural · OAB/GO 67.854</span>
-          </div>
-        </div>
-      </div>
 
-      <form id="leadForm" class="form reveal" data-origem="lp-contratos-agrarios">
-        <label>
-          Nome completo
-          <input type="text" name="nome" autocomplete="name" required>
-        </label>
-        <label>
-          Telefone / WhatsApp
-          <input type="tel" name="telefone" autocomplete="tel" required>
-        </label>
-        <label>
-          Cidade / Estado
-          <input type="text" name="cidade" data-rotulo="Cidade/UF" autocomplete="address-level2">
-        </label>
-        <label>
-          Qual operação?
-          <select name="tipo" data-rotulo="Tipo de contrato">
-            <option value="">Selecione</option>
-            <option>Arrendamento</option>
-            <option>Parceria agrícola</option>
-            <option>Barter</option>
-            <option>Compra e venda de imóvel rural</option>
-            <option>Outro / não sei classificar</option>
-          </select>
-        </label>
-        <label>
-          Em que pé está?
-          <select name="fase" data-rotulo="Fase">
-            <option value="">Selecione</option>
-            <option>Ainda vou negociar</option>
-            <option>Tenho uma minuta para revisar</option>
-            <option>Já assinei e quero conferir</option>
-            <option>Já tem discussão com a outra parte</option>
-          </select>
-        </label>
-        <button type="submit" class="btn btn--primary btn--block">Enviar e falar com o escritório</button>
-        <p class="form__note">Seus dados são tratados com sigilo e usados apenas para este atendimento.</p>
-        <p id="leadFormFeedback" class="form__feedback" role="status"></p>
-      </form>
+
+  <!-- FECHO -->
+  <section class="section section--cream fecho">
+    <div class="container">
+      <div class="section__intro reveal">
+        <h2>Se você leu até aqui, o próximo passo é mandar o contrato.</h2>
+        <p>Foto ou PDF, do jeito que estiver. Se ainda não tem papel, conta como combinou.</p>
+      </div>
+      <div class="hero__actions reveal">
+        <a data-v="wa" href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site.%20Tenho%20um%20contrato%20agr%C3%A1rio%20pra%20conferir." class="btn btn--primary">Mandar o contrato no WhatsApp</a>
+        <a href="#form" class="btn btn--ghost">Prefere que eu te ligue?</a>
+      </div>
     </div>
   </section>
 
 </main>
 
 <div class="sticky-cta" id="stickyCta">
-  <a href="https://wa.me/5564992086744" class="btn btn--primary">Falar no WhatsApp</a>
+  <a data-v="wa" href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site.%20Tenho%20um%20contrato%20agr%C3%A1rio%20pra%20conferir." class="btn btn--primary">Falar no WhatsApp</a>
 </div>
 
 <footer class="footer">
@@ -256,7 +305,7 @@
         <span class="brand__name">Lucas Cabral<em>Advogados</em></span>
       </div>
       <div class="footer__info">
-        <p>Lucas Cabral Advogados — renegociação de dívida rural, contratos agrários e gestão financeira</p>
+        <p>Lucas Cabral Advogados, renegociação de dívida rural, contratos agrários e gestão financeira. Jataí, atende GO, MT e MS</p>
         <p>Jataí/GO · (64) 99208-6744</p><!-- endereço: acrescentar quando existir -->
         <p>OAB/GO 67.854 · <a href="/privacidade.html">Política de Privacidade</a></p>
       </div>
@@ -274,6 +323,6 @@
   </div>
 </footer>
 
-<script src="../script.js?v=20260911b"></script>
+<script src="../script.js?v=20260916"></script>
 </body>
 </html>
