@@ -63,7 +63,7 @@
         <div>
           <div class="hero__actions">
             <a data-v="wa" href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site.%20Tenho%20um%20contrato%20agr%C3%A1rio%20pra%20conferir." class="btn btn--primary"><span data-v="cta">Quero a leitura do meu contrato</span></a>
-            <a href="#form" class="btn btn--ghost"><span data-v="cta2">Prefere que eu te ligue? Deixe nome e telefone</span></a>
+            <a href="#form" class="btn btn--ghost"><span data-v="cta2">Prefere que eu te ligue? Deixe nome, telefone e cidade</span></a>
           </div>
           <p class="hero__note">Elaboração e revisão. Lucas Cabral, OAB/GO 67.854. Jataí, atende GO, MT e MS.</p>
         </div>
@@ -78,7 +78,7 @@
       "h1": "Contrato mal escrito hoje é processo na safra que vem.",
       "sub": "Arrendamento, parceria, comodato, barter e compra e venda de imóvel rural. Preço, prazo, garantia e rescisão resolvidos no papel, antes de a discussão existir.",
       "cta": "Quero a leitura do meu contrato",
-      "msg": "Oi, Lucas. Vim {origem}. Tenho um contrato agrário pra conferir."
+      "msg": "Oi, Lucas. Vim {origem}. Tenho um contrato agrário pra conferir. Sou de ___."
     },
     "parceria-comodato": {
       "alias": ["parceria", "comodato"],
@@ -86,7 +86,7 @@
       "h1": "Parceria divide risco e resultado; arrendamento tem preço fixo. Errar a escolha sai caro.",
       "sub": "Comodato rural também precisa de prazo, uso e devolução no papel. E compra e venda de fazenda começa pela matrícula. Me manda o contrato, ou conta o que vocês combinaram.",
       "cta": "Quero saber qual contrato é o meu caso",
-      "msg": "Oi, Lucas. Vim {origem} sobre contrato de parceria ou comodato. Quero conferir antes de assinar."
+      "msg": "Oi, Lucas. Vim {origem} sobre contrato de parceria ou comodato. Quero conferir antes de assinar. Sou de ___."
     },
     "compra-venda": {
       "alias": ["compra", "venda", "matricula"],
@@ -94,7 +94,7 @@
       "h1": "Compra e venda de fazenda começa pela matrícula, não pelo preço.",
       "sub": "Cadeia dominial, garantia morta na matrícula, área e confrontação. O que conferir antes de pagar. Me manda a matrícula e a minuta.",
       "cta": "Quero conferir antes de pagar",
-      "msg": "Oi, Lucas. Vim {origem}. Estou comprando (ou vendendo) um imóvel rural e quero conferir a matrícula e o contrato."
+      "msg": "Oi, Lucas. Vim {origem}. Estou comprando (ou vendendo) um imóvel rural e quero conferir a matrícula e o contrato. Sou de ___."
     }
   }
   </script>
@@ -107,7 +107,7 @@
         <p class="eyebrow">O que acontece depois</p>
         <h2>Mande o contrato antes de assinar.</h2>
         <ol class="depois">
-          <li><b>1</b><p>Você manda o contrato (foto ou PDF) no WhatsApp, ou deixa nome e telefone logo abaixo.</p></li>
+          <li><b>1</b><p>Você manda o contrato (foto ou PDF) no WhatsApp, ou deixa nome, telefone e cidade logo abaixo.</p></li>
           <li><b>2</b><p>O Lucas responde em horário comercial, em até 2 horas, pelo WhatsApp.</p></li>
           <li><b>3</b><p>Uma conversa de 15 minutos diz que operação é essa de verdade, o que está escrito, o que falta e o que sai do seu lado.</p></li>
         </ol>
@@ -135,8 +135,12 @@
           WhatsApp
           <input type="tel" name="telefone" autocomplete="tel" inputmode="tel" required>
         </label>
+        <label>
+          Cidade / Estado
+          <input type="text" name="cidade" data-rotulo="Cidade/UF" autocomplete="address-level2" placeholder="Ex.: Jataí, GO" required>
+        </label>
         <button type="submit" class="btn btn--primary btn--block">Quero que o Lucas me chame</button>
-        <p class="form__nota">Só nome e telefone. O resto a gente conversa. Ou mande o contrato agora: <a data-v="wa" href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site.%20Tenho%20um%20contrato%20agr%C3%A1rio%20pra%20conferir.">(64) 99208-6744</a></p>
+        <p class="form__nota">Nome, telefone e cidade. O resto a gente conversa. Ou mande o contrato agora: <a data-v="wa" href="https://wa.me/5564992086744?text=Oi%2C%20Lucas.%20Vim%20pelo%20site.%20Tenho%20um%20contrato%20agr%C3%A1rio%20pra%20conferir.">(64) 99208-6744</a></p>
         <p id="leadFormFeedback" class="form__feedback" role="status" aria-live="polite"></p>
       </form>
     </div>
