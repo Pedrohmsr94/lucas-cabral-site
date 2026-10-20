@@ -2,12 +2,25 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lucas Cabral Advogados — Direito do Agronegócio</title>
-<meta name="description" content="Direito do Agronegócio, crédito rural e gestão de risco jurídico do produtor. Renegociação de dívidas, contratos agrários e gestão financeira, com Lucas Cabral.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Lucas Cabral Advogados | Advogado do produtor rural</title>
+<meta name="description" content="Renegociação de dívida rural junto com gestão financeira, contratos agrários e a conta que precisa fechar antes de assinar com o banco. Lucas Cabral, advogado do produtor rural em Jataí (GO).">
+<meta name="theme-color" content="#11131b">
 <link rel="icon" href="assets/logo-fundo-navy.png">
 <link rel="canonical" href="https://lucascabraladvogados.com.br/">
-<link rel="stylesheet" href="styles.css?v=20260911b">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Lucas Cabral Advogados | Advogado do produtor rural">
+<meta property="og:description" content="A dívida não decide o futuro da sua terra. Você decide.">
+<meta property="og:url" content="https://lucascabraladvogados.com.br/">
+<meta property="og:image" content="https://lucascabraladvogados.com.br/assets/fotos/chave-2-1920.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Kalam:wght@400;700&family=Marcellus&display=swap">
+<link rel="preload" as="image" href="assets/fotos/chave-1-m-720.webp" media="(max-width: 760px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/fotos/chave-1-1920.webp" media="(min-width: 761px)" fetchpriority="high">
+<link rel="stylesheet" href="styles.css?v=20261020">
+<script>document.documentElement.classList.add('js');</script>
 <script src="/rastreamento.js?v=20260916" defer></script>
 <script type="application/ld+json">
 {
@@ -109,161 +122,379 @@
 </script>
 </head>
 <body>
+<!--
+THESIS: a página é a conta que ninguém faz antes de renegociar. A câmera sai da lavoura,
+entra na sede e pousa no caderno de contas aberto na mesa; o caderno escreve, linha por
+linha, se sobra ou falta. Recusa o padrão do nicho: foto do advogado de terno + "conheça
+nossas áreas" + selo de anos de experiência.
+OWN-WORLD: noite navy (#11131b/#1b1e2c), dourado champagne→cobre só em ação e fio,
+Marcellus (a capitular romana do logo) nos títulos, Albert Sans no texto, Kalam como a
+caneta azul do caderno; papel pautado com margem cobre; fileiras de plantio em perspectiva
+como ornamento. Gente é sempre foto real do Lucas; IA só paisagem e objeto.
+STORY: o produtor entende que o problema é a conta antes do banco, acredita que o Lucas
+faz essa conta com ele (prova: a frase dele, os números, a trajetória), e chama no WhatsApp,
+de preferência mandando a própria conta.
+FIRST VIEWPORT: lavoura em tela cheia ao amanhecer, fileiras convergindo pra sede; título
+grande embaixo à esquerda ("Você decide." em dourado sólido), subtítulo, dois botões
+(WhatsApp dourado, "Fazer a conta primeiro") e o selo do Lucas (avatar oficial, nome, OAB)
+na primeira tela; trilho "lavoura · sede · mesa" à direita. Nenhum rótulo acima de título.
+FORM: "O caderno de contas", estrutura 5 da lista, semente 869aba47.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+-->
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
 <header class="header">
   <div class="container header__inner">
-    <a href="index.html" class="header__mark">
-      <img src="assets/logo-preto-recorte.png" alt="Lucas Cabral Advogados">
+    <a href="index.html" class="header__mark" aria-label="Lucas Cabral Advogados, página inicial">
+      <img class="header__simbolo" src="assets/marca/simbolo-96.png" alt="" width="111" height="96">
+      <img src="assets/marca/assinatura-60.png" alt="Lucas Cabral Advogados" width="349" height="60">
     </a>
-    <button class="header__toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
-    <ul class="header__nav">
+    <button class="header__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul class="header__nav" id="menu">
       <li><a href="index.html" aria-current="page">Início</a></li>
       <li><a href="sobre.html">Sobre</a></li>
       <li><a href="areas-de-atuacao.html">Áreas de Atuação</a></li>
       <li><a href="radar-agro.html">Radar Agro</a></li>
       <li><a href="contato.html">Contato</a></li>
+      <li class="header__nav-zap"><a class="btn" href="https://wa.me/5564992086744?text=Ol%C3%A1%2C%20Lucas.%20Vim%20pelo%20site%20e%20queria%20conversar." target="_blank" rel="noopener">Conversar no WhatsApp</a></li>
     </ul>
-    <a href="contato.html" class="btn header__cta">Falar com Lucas</a>
+    <a href="https://wa.me/5564992086744?text=Ol%C3%A1%2C%20Lucas.%20Vim%20pelo%20site%20e%20queria%20conversar." class="btn header__cta" target="_blank" rel="noopener">WhatsApp</a>
   </div>
 </header>
 
-<main>
+<main id="conteudo">
 
-  <!-- MASTHEAD -->
-  <section class="masthead">
-    <div class="masthead__bg">
-      <img src="assets/lucas-campo-solo.jpg" alt="Lucas Cabral na lavoura colhida, olhando o campo">
-    </div>
-    <div class="masthead__overlay"></div>
-    <div class="container">
-      <p class="eyebrow reveal">Advogado do produtor rural</p>
-      <h1 class="reveal">A dívida não decide o futuro da sua terra. Você decide.</h1>
-      <p class="masthead__sub reveal">
-        Você não precisa decidir isso sozinho. Existe quem pense com você antes do banco decidir
-        por você.
-      </p>
-      <div class="masthead__actions reveal">
-        <a href="contato.html" class="btn btn--invert">Agendar uma conversa</a>
-        <a href="areas-de-atuacao.html" class="link-arrow">Conhecer as áreas de atuação →</a>
+  <!-- A JORNADA: lavoura → sede → mesa, desenhada pelo scroll (assets/jornada/, jornada.js) -->
+  <section class="jornada" aria-label="Da lavoura até a mesa" data-base="assets/jornada/" data-quadros="168" data-versao="20261020">
+    <div class="jornada__palco">
+      <picture>
+        <source media="(max-width: 760px)" srcset="assets/fotos/chave-1-m-720.webp">
+        <img class="jornada__poster" src="assets/fotos/chave-1-1920.webp" alt="" fetchpriority="high">
+      </picture>
+      <canvas class="jornada__tela" aria-hidden="true"></canvas>
+      <div class="jornada__veu"></div>
+
+      <div class="jornada__capitulos">
+        <div class="capitulo is-ativo" data-de="0" data-ate="0.2" style="--img:url('assets/fotos/chave-1-1920.webp')">
+          <div class="container capitulo__corpo">
+            <h1>A dívida não decide o futuro da sua terra. <span class="dourado">Você decide.</span></h1>
+            <p>Você não precisa decidir isso sozinho. Existe quem pense com você antes de o banco decidir por você.</p>
+            <div class="capitulo__acoes">
+              <a class="btn" href="https://wa.me/5564992086744?text=Ol%C3%A1%2C%20Lucas.%20Vim%20pelo%20site%20e%20queria%20conversar." target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></svg>
+                Conversar no WhatsApp
+              </a>
+              <a class="link-arrow seta seta--baixo" href="#a-conta">Fazer a conta primeiro</a>
+            </div>
+            <div class="selo">
+              <img src="assets/marca/avatar.png" alt="" width="150" height="150">
+              <p><strong>Lucas Cabral</strong><span>Advogado do produtor rural · OAB/GO 67.854</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="capitulo" data-de="0.29" data-ate="0.5" style="--img:url('assets/fotos/chave-2-1920.webp')">
+          <div class="container capitulo__corpo">
+            <h2>O trabalho começa antes de o problema bater na porta.</h2>
+            <p>Plano Safra, Banco Central, decisões do STJ: o estudo vem antes do conselho, pra chegar até você com clareza, não com promessa.</p>
+          </div>
+        </div>
+
+        <div class="capitulo" data-de="0.63" data-ate="0.8" style="--img:url('assets/fotos/chave-3-1920.webp')">
+          <div class="container capitulo__corpo">
+            <h2>É com os papéis na mesa.</h2>
+            <p>Na fazenda, no escritório em Jataí ou por vídeo. E a primeira pergunta não é sobre o banco. É sobre a conta.</p>
+          </div>
+        </div>
       </div>
-      <p class="masthead__note reveal">Avaliação inicial sem custo. Sigilo total.</p>
+
+      <ol class="jornada__trilho" aria-hidden="true">
+        <li data-trecho="0">A lavoura</li>
+        <li data-trecho="1">A sede</li>
+        <li data-trecho="2">A mesa</li>
+      </ol>
+      <span class="jornada__rolar" aria-hidden="true"></span>
     </div>
   </section>
 
-  <!-- POSICIONAMENTO -->
-  <section class="section">
-    <div class="container editorial">
-      <div class="editorial__frame reveal">
-        <img src="assets/hero-lucas.jpg" alt="Lucas Cabral no milharal, em Goiás">
+  <!-- O CADERNO: a conta escrita linha por linha (jornada.js cuida da escrita e do modo "meus números") -->
+  <section class="caderno" id="a-conta" data-sem-zap style="--mesa:url('assets/fotos/caderno-fundo.webp');--mesa-m:url('assets/fotos/caderno-fundo-m.webp')" aria-labelledby="caderno-titulo">
+    <div class="caderno__fundo" aria-hidden="true"></div>
+    <div class="container caderno__grade">
+
+      <div class="caderno__folha-wrap">
+        <div class="folha" id="folha" data-modo="exemplo">
+          <p class="folha__cabeca"><span>Safra 26/27</span><span id="folha-modo">Exemplo</span></p>
+          <ol class="folha__linhas">
+            <li class="folha__linha" data-passo="1">
+              <span class="folha__rotulo">Área plantada</span>
+              <span class="folha__valor" data-campo="area" data-exemplo="500">500 <small>ha</small></span>
+            </li>
+            <li class="folha__linha" data-passo="1">
+              <span class="folha__rotulo">Colheita</span>
+              <span class="folha__valor" data-campo="sacas" data-exemplo="62">62 <small>sc/ha</small></span>
+            </li>
+            <li class="folha__linha" data-passo="2">
+              <span class="folha__rotulo">Preço da saca</span>
+              <span class="folha__valor" data-campo="preco" data-exemplo="118">R$ 118</span>
+            </li>
+            <li class="folha__linha" data-passo="2">
+              <span class="folha__rotulo">Entra</span>
+              <span class="folha__valor" data-saida="entra">R$ 3.658.000</span>
+            </li>
+            <li class="folha__linha folha__linha--menos" data-passo="3">
+              <span class="folha__rotulo">Custo da lavoura</span>
+              <span class="folha__valor"><span data-campo="custo" data-exemplo="5900">R$ 5.900</span> <small>/ha</small></span>
+            </li>
+            <li class="folha__linha folha__linha--menos" data-passo="4">
+              <span class="folha__rotulo">Parcelas do banco</span>
+              <span class="folha__valor" data-campo="parcelas" data-exemplo="825000">R$ 825.000</span>
+            </li>
+            <li class="folha__linha folha__linha--total" data-passo="5">
+              <span class="folha__rotulo">Sobra</span>
+              <span class="folha__valor"><span data-saida="sobra">− R$ 117.000</span>
+                <svg class="folha__circulo" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M150 6C110 1 30 2 12 14c-14 10 6 22 70 22 62 0 112-6 112-18C194 8 168 4 140 4"/></svg>
+              </span>
+            </li>
+          </ol>
+          <p class="folha__sacas" data-passo="5"><span data-saida="sacas">Faltam 992 sacas.</span></p>
+          <p class="folha__aviso" id="folha-aviso">Exemplo ilustrativo. A sua lavoura tem os números dela.</p>
+        </div>
       </div>
-      <div class="reveal">
-        <p class="eyebrow">Quem cuida do seu caso</p>
-        <h2>Lucas não vende processos. Ele protege patrimônio, família e legado.</h2>
-        <p>
-          O trabalho começa antes da urgência: estudar o Plano Safra, acompanhar as decisões do
-          Banco Central e do STJ sobre crédito rural, entender o mercado — para chegar até você
-          com clareza, não com promessas.
-        </p>
-        <p>
-          Cada caso é tratado como o que realmente é: uma decisão de longo prazo para uma família
-          que vive da terra, não uma estatística de escritório.
-        </p>
-        <a href="sobre.html" class="link-arrow">Conhecer a história e o método →</a>
+
+      <div class="caderno__passos">
+        <div class="passo" data-passo="0">
+          <div class="passo__cartao">
+            <h2 id="caderno-titulo">Antes de falar em juros, a pergunta é outra: sobra?</h2>
+            <p>Todo produtor tem um caderno assim. É nele que uma renegociação dá certo ou não, bem antes de qualquer assinatura.</p>
+          </div>
+        </div>
+        <div class="passo" data-passo="1">
+          <div class="passo__cartao">
+            <span class="passo__num">1.</span>
+            <h3>O que a lavoura entrega de verdade</h3>
+            <p>A média dos talhões, não o melhor ano. É a partir daqui que se sabe quanto dá pra pagar.</p>
+          </div>
+        </div>
+        <div class="passo" data-passo="2">
+          <div class="passo__cartao">
+            <span class="passo__num">2.</span>
+            <h3>O preço que se vende</h3>
+            <p>Não o da tela no dia bom. Saca vendida, contrato fechado, barter já descontado.</p>
+          </div>
+        </div>
+        <div class="passo" data-passo="3">
+          <div class="passo__cartao">
+            <span class="passo__num">3.</span>
+            <h3>Tudo que sai antes da colheita</h3>
+            <p>Semente, adubo, defensivo, diesel, gente, arrendamento. O custo de plantar e colher, por hectare.</p>
+          </div>
+        </div>
+        <div class="passo" data-passo="4">
+          <div class="passo__cartao">
+            <span class="passo__num">4.</span>
+            <h3>O que vence nesta safra</h3>
+            <p>Custeio, investimento, CPR. As parcelas que o banco cobra no ano, somadas.</p>
+          </div>
+        </div>
+        <div class="passo" data-passo="5">
+          <div class="passo__cartao">
+            <span class="passo__num">5.</span>
+            <h3>Faltou. E não foi falta de trabalho.</h3>
+            <p>Esticar o prazo sem mexer nessa conta só empurra a mesma linha pro ano que vem. Por isso aqui a renegociação anda junto com a gestão financeira: primeiro a conta fecha, depois se assina.</p>
+          </div>
+        </div>
+        <div class="passo" data-passo="5">
+          <div class="passo__cartao">
+            <blockquote class="citacao" style="margin-top:0">
+              <p>“De nada adianta negociar a dívida se não vai ter capacidade de pagamento.”</p>
+              <cite>Lucas Cabral</cite>
+            </blockquote>
+          </div>
+        </div>
+        <div class="passo" data-passo="6">
+          <div class="passo__cartao">
+            <h3>Faça a conta com os seus números</h3>
+            <p>Troque os números do caderno pelos seus. A sobra se refaz na hora.</p>
+            <div class="caderno__acoes">
+              <button class="btn btn--contorno" type="button" id="folha-editar">Usar os meus números</button>
+              <a class="btn" id="folha-zap" href="https://wa.me/5564992086744?text=Ol%C3%A1%2C%20Lucas.%20Fiz%20a%20conta%20no%20site%20e%20queria%20conversar." target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></svg>
+                Mandar a conta pro Lucas
+              </a>
+            </div>
+            <p class="caderno__privado">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M6 10V8a6 6 0 1 1 12 0v2M5 10h14v11H5z"/></svg>
+              <span>O que você digita fica no seu celular. Só chega no Lucas se você apertar pra mandar.</span>
+            </p>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ÁREAS DE ATUAÇÃO (índice) -->
-  <section class="section section--cream">
-    <div class="container editorial editorial--text-first">
+  <!-- QUEM FAZ A CONTA: foto real -->
+  <section class="section" aria-labelledby="quem-titulo">
+    <div class="container quem">
+      <figure class="quem__foto faixas zoom-lento" style="margin:0">
+        <img src="assets/fotos/lucas-lavoura-1800.webp" srcset="assets/fotos/lucas-lavoura-900.webp 900w, assets/fotos/lucas-lavoura-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 50vw" alt="Lucas Cabral de pé na lavoura de milho colhida, olhando o talhão" loading="lazy" width="1800" height="1200">
+        <figcaption class="quem__selo">OAB/GO 67.854</figcaption>
+      </figure>
       <div>
-        <div class="section__head reveal">
-          <p class="eyebrow">Como ajudamos</p>
-          <h2>Atuação especializada em Direito do Agronegócio</h2>
+        <h2 id="quem-titulo" class="reveal">Lucas Cabral, advogado do produtor rural.</h2>
+        <p class="reveal">Conhece a mesma dívida pelos dois lados: o acordo que evita o processo e a defesa quando ele já existe. Atua em renegociação de dívida rural pela via judicial desde 2020 e pela extrajudicial desde 2024, e abriu o próprio escritório em 2026, em Jataí, com atendimento no Brasil inteiro.</p>
+        <p class="reveal">Se puder ser lembrado por uma única coisa, que seja esta: um bom profissional, tecnicamente. Relacionamento abre porta, mas é a técnica que resolve o caso.</p>
+        <div class="folha folha--nota" role="group" aria-label="O que já passou pela mesa">
+          <p class="folha__cabeca"><span>O que já passou pela mesa</span><span>até 2026</span></p>
+          <ul class="folha__linhas">
+            <li class="folha__linha is-escrita"><span class="folha__rotulo">Dívida rural</span><span class="folha__valor">R$ 200 mi</span></li>
+            <li class="folha__linha is-escrita"><span class="folha__rotulo">Famílias produtoras</span><span class="folha__valor">70</span></li>
+            <li class="folha__linha is-escrita"><span class="folha__rotulo">Casos com a garantia no centro</span><span class="folha__valor">30</span></li>
+          </ul>
         </div>
-        <div class="index-list">
-          <div class="index-item reveal">
-            <span class="index-item__num">01</span>
-            <div>
-              <h3>Renegociação de Dívida Rural</h3>
-              <p>Revisão de contratos e cédulas de crédito rural, defesa em execuções e proposta de renegociação estruturada junto às instituições financeiras.</p>
-              <a href="areas-de-atuacao.html#renegociacao-divida-rural" class="link-arrow">Ver detalhes →</a>
-            </div>
-          </div>
-          <div class="index-item reveal">
-            <span class="index-item__num">02</span>
-            <div>
-              <h3>Contratos Agrários</h3>
-              <p>Compra e venda de imóvel rural, arrendamento, parceria e barter — contratos bem construídos evitam disputas antes que elas comecem.</p>
-              <a href="areas-de-atuacao.html#contratos-agrarios" class="link-arrow">Ver detalhes →</a>
-            </div>
-          </div>
-          <div class="index-item reveal">
-            <span class="index-item__num">03</span>
-            <div>
-              <h3>Gestão Financeira do Produtor</h3>
-              <p>Renegociar prazo e juros não resolve se não houver capacidade real de pagamento. Produtividade real e onde o dinheiro está vazando.</p>
-              <a href="areas-de-atuacao.html#gestao-financeira" class="link-arrow">Ver detalhes →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="editorial__frame editorial__frame--fixed reveal">
-        <img src="assets/escritorio-marca.jpg" alt="Mesa do escritório, com a marca Lucas Cabral Advogados na tela">
+        <p class="numeros__nota reveal">Números aproximados de experiência acumulada, incluindo a atuação anterior à abertura do escritório. Cada caso depende dos fatos e dos documentos, e não existe garantia de resultado.</p>
+        <p class="reveal" style="margin-top:28px"><a class="link-arrow seta" href="sobre.html">A história e o método</a></p>
       </div>
     </div>
   </section>
 
-  <!-- CITAÇÃO -->
-  <section class="section section--dark">
+  <section class="section section--dark section--tight" aria-label="Trajetória">
     <div class="container">
-      <blockquote class="quote reveal">
-        “Segurança e clareza, do primeiro contato ao último detalhe do contrato.”
-        <span class="quote__cite">Como o escritório trabalha</span>
-      </blockquote>
+      <h2 class="titulo-curto">A trajetória</h2>
+      <ol class="trilha reveal">
+        <li><strong>2016</strong><span>A família quebra. Ele vê de perto a conta que não fecha.</span></li>
+        <li><strong>2020</strong><span>Dentro do processo: defesa em execução e revisão de cédula.</span></li>
+        <li><strong>2022</strong><span>Inscrição própria na OAB de Goiás.</span></li>
+        <li><strong>2024</strong><span>Antes do processo: renegociação na mesa, com o banco.</span></li>
+        <li><strong>2026</strong><span>Porta própria, com os dois lados na mão.</span></li>
+      </ol>
     </div>
   </section>
 
-  <!-- RADAR AGRO (teaser) -->
-  <section class="section section--dark">
+  <!-- AS TRÊS FRENTES -->
+  <section class="section" aria-labelledby="frentes-titulo">
     <div class="container">
-      <div class="section__head reveal">
-        <p class="eyebrow">Radar Agro</p>
-        <h2>O que muda no crédito rural, na lei e no seu contrato</h2>
+      <div class="section__head">
+        <h2 id="frentes-titulo" class="reveal">Três frentes, sempre juntas.</h2>
+        <p class="reveal">Renegociar sem olhar o contrato e o caixa é resolver pela metade. Cada caso passa pelas três.</p>
       </div>
-      <div class="radar-teaser">
-        <div class="radar-teaser__item reveal">
-          <span class="radar-teaser__tag">Plano Safra</span>
-          <h3>Plano Safra 2026/27: o que muda de verdade no crédito rural</h3>
-          <p>Juros menores em quase toda linha — e um desconto extra que pouca gente usa.</p>
-          <a href="radar-plano-safra-2026-27.html" class="link-arrow">Ler artigo →</a>
-        </div>
-        <div class="radar-teaser__item reveal">
-          <span class="radar-teaser__tag">Crédito Rural</span>
-          <h3>Sua CPR vinculada a barter entra na recuperação judicial?</h3>
-          <p>O STJ decidiu que não. Veja o que isso muda antes de assinar o próximo contrato.</p>
-          <a href="radar-cpr-barter.html" class="link-arrow">Ler artigo →</a>
-        </div>
-        <div class="radar-teaser__item reveal">
-          <span class="radar-teaser__tag">Renegociação de Dívida</span>
-          <h3>Recuperação judicial do produtor rural tem regra nova</h3>
-          <p>O CNJ padronizou o que antes cada comarca aplicava do seu jeito.</p>
-          <a href="radar-recuperacao-judicial-cnj.html" class="link-arrow">Ler artigo →</a>
-        </div>
+
+      <div class="frentes">
+        <article class="frente" style="--i:0">
+          <div class="frente__media">
+            <img src="assets/fotos/lucas-documento-1600.webp" srcset="assets/fotos/lucas-documento-900.webp 900w, assets/fotos/lucas-documento-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 48vw" alt="Mãos de Lucas Cabral sobre o tablet com um documento aberto, na mesa do escritório" loading="lazy" width="1600" height="1067">
+          </div>
+          <div class="frente__corpo">
+            <h3>Renegociação de dívida rural</h3>
+            <p>Revisão de cédula, negociação estruturada com o banco e defesa em execução, sempre com a gestão financeira junto.</p>
+            <ul>
+              <li>Revisão de cédula de crédito rural e de condição abusiva</li>
+              <li>Negociação com banco e cooperativa, por escrito</li>
+              <li>Defesa em execução judicial e extrajudicial</li>
+            </ul>
+            <a class="link-arrow seta" href="areas-de-atuacao.html#renegociacao-divida-rural">Ver a frente de dívida</a>
+          </div>
+        </article>
+
+        <article class="frente" style="--i:1">
+          <div class="frente__media">
+            <img src="assets/fotos/contrato-assinatura-1200.webp" srcset="assets/fotos/contrato-assinatura-700.webp 700w, assets/fotos/contrato-assinatura-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 48vw" alt="Mãos de um produtor assinando um aditivo de contrato na mesa da sede, com café, óculos e calculadora" loading="lazy" width="1200" height="2122">
+          </div>
+          <div class="frente__corpo">
+            <h3>Contratos agrários</h3>
+            <p>A maioria das brigas começa numa cláusula escrita anos antes. Arrendamento, parceria, compra e venda e barter, bem feitos antes de assinar.</p>
+            <ul>
+              <li>Arrendamento e parceria, com o calcário e o poço na conta</li>
+              <li>Compra e venda de imóvel rural</li>
+              <li>Barter: troca de insumo por produção</li>
+            </ul>
+            <a class="link-arrow seta" href="areas-de-atuacao.html#contratos-agrarios">Ver a frente de contratos</a>
+          </div>
+        </article>
+
+        <article class="frente" style="--i:2">
+          <div class="frente__media">
+            <img src="assets/fotos/gestao-caderno-caminhonete-1200.webp" srcset="assets/fotos/gestao-caderno-caminhonete-700.webp 700w, assets/fotos/gestao-caderno-caminhonete-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 48vw" alt="Caderno de contas, caneta e celular na tampa da caminhonete, na beira de um talhão de terra vermelha" loading="lazy" width="1200" height="1500">
+          </div>
+          <div class="frente__corpo">
+            <h3>Gestão financeira do produtor</h3>
+            <p>Sem saber onde o dinheiro está, nenhuma renegociação para de pé. Sacas por hectare contra o custo real do hectare, e onde está vazando.</p>
+            <ul>
+              <li>Separar as contas da família das contas da fazenda</li>
+              <li>Produtividade real contra custo real por hectare</li>
+              <li>Passivo reorganizado com olhar de médio prazo</li>
+            </ul>
+            <a class="link-arrow seta" href="areas-de-atuacao.html#gestao-financeira">Ver a frente de gestão</a>
+          </div>
+        </article>
       </div>
-      <p class="reveal" style="margin-top:32px">
-        <a href="radar-agro.html" class="link-arrow">Ver todos os artigos do Radar Agro →</a>
-      </p>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section section--form section--tight">
+  <!-- RADAR AGRO -->
+  <section class="section section--dark" aria-labelledby="radar-titulo">
     <div class="container">
-      <div class="reveal" style="max-width:600px">
-        <p class="eyebrow">Primeiro passo</p>
-        <h2>Fale sobre a sua situação. Sem compromisso, com clareza.</h2>
-        <a href="contato.html" class="link-arrow">Agendar uma conversa →</a>
+      <div class="section__head">
+        <h2 id="radar-titulo" class="reveal">O que muda no crédito rural, na lei e no seu contrato.</h2>
+      </div>
+      <div class="radar-lista">
+        <div class="radar-item reveal">
+          <div>
+            <span class="radar-item__tag">Renegociação de Dívida</span>
+            <span class="radar-item__date">Setembro de 2026 · 6 min</span>
+          </div>
+          <div>
+            <h3><a href="radar-banco-recusou-mp-1376-o-que-pedir-por-escrito.html">O banco recusou a MP 1.376: o que pedir por escrito antes de aceitar o não</a></h3>
+            <p>Recusa por conveniência e recusa por enquadramento são coisas diferentes, e só o pedido protocolado mostra qual foi a sua.</p>
+          </div>
+        </div>
+        <div class="radar-item reveal">
+          <div>
+            <span class="radar-item__tag">Plano Safra</span>
+            <span class="radar-item__date">Julho de 2026 · 8 min</span>
+          </div>
+          <div>
+            <h3><a href="radar-plano-safra-2026-27.html">Plano Safra 2026/27: o que muda de verdade no crédito rural</a></h3>
+            <p>Juros menores em quase toda linha, e um desconto extra que pouca gente usa.</p>
+          </div>
+        </div>
+        <div class="radar-item reveal">
+          <div>
+            <span class="radar-item__tag">Crédito Rural</span>
+            <span class="radar-item__date">Julho de 2026 · 7 min</span>
+          </div>
+          <div>
+            <h3><a href="radar-cpr-barter.html">Sua CPR vinculada a barter entra ou não na recuperação judicial?</a></h3>
+            <p>O STJ decidiu que não. O que isso muda antes de assinar o próximo contrato.</p>
+          </div>
+        </div>
+      </div>
+      <p class="reveal" style="margin-top:36px"><a class="link-arrow seta" href="radar-agro.html">Todos os artigos do Radar Agro</a></p>
+    </div>
+  </section>
+
+  <!-- A PROSA: fechamento -->
+  <section class="section section--form" id="conversa" data-sem-zap aria-labelledby="prosa-titulo">
+    <div class="container prosa">
+      <figure class="prosa__foto faixas" style="margin:0;--fundo-faixa:var(--navy-3)">
+        <img src="assets/fotos/lucas-celular-1100.webp" srcset="assets/fotos/lucas-celular-640.webp 640w, assets/fotos/lucas-celular-1100.webp 1100w" sizes="(max-width: 900px) 100vw, 40vw" alt="Lucas Cabral olhando o celular, sentado à mesa do escritório" loading="lazy" width="1100" height="1650">
+      </figure>
+      <div>
+        <h2 id="prosa-titulo" class="reveal">Conte a sua situação. Sem compromisso, com clareza.</h2>
+        <ol class="prosa__passos reveal">
+          <li>Você chama no WhatsApp e conta por cima o que está acontecendo.</li>
+          <li>Uma primeira conversa curta, sem custo, pra entender se o caso é dessa mesa.</li>
+          <li>Depois, a prosa de verdade, com os papéis na mesa: na fazenda, no escritório em Jataí ou por vídeo.</li>
+        </ol>
+        <div class="prosa__acoes reveal">
+          <a class="btn" href="https://wa.me/5564992086744?text=Ol%C3%A1%2C%20Lucas.%20Vim%20pelo%20site%20e%20queria%20conversar." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></svg>
+            (64) 99208-6744
+          </a>
+          <a class="link-arrow seta" href="contato.html">Prefiro deixar meu contato</a>
+        </div>
+        <p class="capitulo__nota reveal">Seus dados e a sua história ficam entre você e o escritório.</p>
       </div>
     </div>
   </section>
@@ -271,14 +502,15 @@
 </main>
 
 <footer class="footer">
+  <div class="fileiras" aria-hidden="true"></div>
   <div class="container">
     <div class="footer__grid">
       <div>
-        <p class="footer__mark">Lucas Cabral Advogados</p>
+        <p class="footer__mark"><img src="assets/marca/assinatura-120.png" alt="Lucas Cabral Advogados" width="699" height="120" loading="lazy"></p>
         <p>Renegociação de dívida rural, contratos agrários e gestão financeira do produtor.</p>
       </div>
       <div class="footer__col">
-        <h4>Navegação</h4>
+        <p class="footer__titulo">Navegação</p>
         <ul>
           <li><a href="index.html">Início</a></li>
           <li><a href="sobre.html">Sobre</a></li>
@@ -288,10 +520,10 @@
         </ul>
       </div>
       <div class="footer__col">
-        <h4>Atendimento</h4>
+        <p class="footer__titulo">Atendimento</p>
         <ul>
-          <li><a href="https://wa.me/5564992086744" target="_blank" rel="noopener">(64) 99208-6744</a></li>
-          <li><span>Escritório em Jataí — GO</span></li>
+          <li><a href="https://wa.me/5564992086744" target="_blank" rel="noopener">WhatsApp (64) 99208-6744</a></li>
+          <li><span>Escritório em Jataí, GO</span></li>
           <li><span>Atendimento em todo o Brasil</span></li>
         </ul>
       </div>
@@ -300,6 +532,12 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260911b"></script>
+<a class="zap-fixo" href="https://wa.me/5564992086744?text=Ol%C3%A1%2C%20Lucas.%20Vim%20pelo%20site%20e%20queria%20conversar." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></svg>
+  WhatsApp
+</a>
+
+<script src="script.js?v=20261020"></script>
+<script src="jornada.js?v=20261020"></script>
 </body>
 </html>

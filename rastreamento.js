@@ -33,7 +33,10 @@
   } catch (e) { /* navegação privada sem sessionStorage: segue sem rastreio */ }
 
   /* ---------------------------------------------------------------- GTM */
-  if (GTM_ID) {
+  /* Só no domínio de verdade. Prévia local (127.0.0.1) ou link de teste não
+     dispara GA4, Pixel nem Clarity: visita de teste vira número falso. */
+  var PRODUCAO = /(^|\.)lucascabraladvogados\.com\.br$/.test(location.hostname);
+  if (GTM_ID && PRODUCAO) {
     window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
     var s = document.createElement('script');
     s.async = true;

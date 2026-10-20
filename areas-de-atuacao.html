@@ -3,11 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Áreas de Atuação — Lucas Cabral Advogados</title>
-<meta name="description" content="Renegociação de dívida rural, contratos agrários e gestão financeira do produtor — atuação especializada em Direito do Agronegócio.">
+<title>Áreas de Atuação | Lucas Cabral Advogados</title>
+<meta name="description" content="Renegociação de dívida rural, contratos agrários e gestão financeira do produtor: atuação especializada em Direito do Agronegócio.">
+<meta name="theme-color" content="#11131b">
 <link rel="icon" href="assets/logo-fundo-navy.png">
 <link rel="canonical" href="https://lucascabraladvogados.com.br/areas-de-atuacao.html">
-<link rel="stylesheet" href="styles.css?v=20260911b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Marcellus&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261020">
+<script>document.documentElement.classList.add('js');</script>
 <script src="/rastreamento.js?v=20260916" defer></script>
 <script type="application/ld+json">
 {
@@ -17,7 +22,7 @@
       "@type": "CollectionPage",
       "name": "Áreas de Atuação",
       "url": "https://lucascabraladvogados.com.br/areas-de-atuacao.html",
-      "description": "Renegociação de dívida rural, contratos agrários e gestão financeira do produtor — atuação especializada em Direito do Agronegócio.",
+      "description": "Renegociação de dívida rural, contratos agrários e gestão financeira do produtor: atuação especializada em Direito do Agronegócio.",
       "isPartOf": {
         "@id": "https://lucascabraladvogados.com.br/#site"
       },
@@ -47,127 +52,145 @@
 </script>
 </head>
 <body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
 <header class="header">
   <div class="container header__inner">
-    <a href="index.html" class="header__mark">
-      <img src="assets/logo-preto-recorte.png" alt="Lucas Cabral Advogados">
+    <a href="index.html" class="header__mark" aria-label="Lucas Cabral Advogados, página inicial">
+      <img class="header__simbolo" src="assets/marca/simbolo-96.png" alt="" width="111" height="96">
+      <img src="assets/marca/assinatura-60.png" alt="Lucas Cabral Advogados" width="349" height="60">
     </a>
-    <button class="header__toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
-    <ul class="header__nav">
+    <button class="header__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul class="header__nav" id="menu">
       <li><a href="index.html">Início</a></li>
       <li><a href="sobre.html">Sobre</a></li>
       <li><a href="areas-de-atuacao.html" aria-current="page">Áreas de Atuação</a></li>
       <li><a href="radar-agro.html">Radar Agro</a></li>
       <li><a href="contato.html">Contato</a></li>
+      <li class="header__nav-zap"><a class="btn" href="https://wa.me/5564992086744?text=Ol%C3%A1%2C%20Lucas.%20Vim%20pelo%20site%20e%20queria%20conversar." target="_blank" rel="noopener">Conversar no WhatsApp</a></li>
     </ul>
-    <a href="contato.html" class="btn header__cta">Falar com Lucas</a>
+    <a href="https://wa.me/5564992086744?text=Ol%C3%A1%2C%20Lucas.%20Vim%20pelo%20site%20e%20queria%20conversar." class="btn header__cta" target="_blank" rel="noopener">WhatsApp</a>
   </div>
 </header>
 
-<main>
+<main id="conteudo">
 
   <div class="page-banner">
-    <div class="page-banner__bg"><img src="assets/colheita-sem-pessoas.jpg" alt="Colheitadeira em operação na lavoura de milho"></div>
+    <div class="page-banner__bg">
+      <video class="video-ambiente" muted loop playsinline preload="none" aria-hidden="true"
+        poster="assets/video/lavoura-poster.webp"
+        data-video="assets/video/lavoura.mp4" data-video-m="assets/video/lavoura-m.mp4"></video>
+    </div>
     <div class="page-banner__overlay"></div>
     <div class="container">
-      <p class="eyebrow reveal">Áreas de Atuação</p>
-      <h1 class="reveal">Atuação especializada em Direito do Agronegócio</h1>
-      <p class="reveal">Renegociação de dívida, contratos agrários e gestão financeira — sempre juntos, nunca isolados.</p>
+      <h1 class="reveal">Três frentes, sempre juntas</h1>
+      <p class="reveal">Renegociação de dívida, contratos agrários e gestão financeira. Resolver uma sem olhar as outras é resolver pela metade.</p>
+      <nav class="area__indice reveal" aria-label="Ir para a área">
+        <a href="#renegociacao-divida-rural">Renegociação de dívida rural</a>
+        <a href="#contratos-agrarios">Contratos agrários</a>
+        <a href="#gestao-financeira">Gestão financeira</a>
+      </nav>
     </div>
   </div>
 
   <!-- RENEGOCIAÇÃO DE DÍVIDA RURAL -->
-  <section id="renegociacao-divida-rural" class="service-detail">
-    <div class="container grid grid--2 grid--align-start">
-      <div class="editorial__frame editorial__frame--fixed reveal">
-        <img src="assets/serie/areas-renegociacao.jpg" alt="Colheita de milho em andamento, caminhão recebendo a carga">
-      </div>
-      <div class="reveal">
-        <p class="index-item__num" style="margin-bottom:12px">01</p>
-        <h2>Renegociação de Dívida Rural</h2>
-        <p>
-          Renegociar não é fraqueza — é estratégia. O trabalho sempre é feito em conjunto com a
-          gestão financeira, porque não adianta renegociar prazo ou juros se o produtor não tem
+  <section id="renegociacao-divida-rural" class="area">
+    <div class="container area__grade">
+      <figure class="area__media faixas" style="margin:0">
+        <img src="assets/fotos/lucas-documento-1600.webp" srcset="assets/fotos/lucas-documento-900.webp 900w, assets/fotos/lucas-documento-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 44vw" alt="Mãos de Lucas Cabral sobre o tablet com um documento aberto, na mesa do escritório" loading="lazy" width="1600" height="1067">
+      </figure>
+      <div>
+        <h2 class="reveal">Renegociação de dívida rural</h2>
+        <p class="reveal">
+          Renegociar não é fraqueza. É estratégia. O trabalho é sempre feito junto com a gestão
+          financeira, porque não adianta renegociar prazo ou juros se o produtor não tem
           capacidade real de pagamento depois.
         </p>
-        <ul class="service-detail__list">
-          <li>Revisão de cédulas de crédito rural (CPR) e condições abusivas</li>
-          <li>Negociação estruturada com bancos e instituições financeiras</li>
-          <li>Defesa em execuções judiciais e extrajudiciais</li>
-          <li>Proteção de bens essenciais à atividade e à moradia da família</li>
+        <ul class="area__lista reveal">
+          <li>Revisão de cédula de crédito rural e de condição abusiva</li>
+          <li>Negociação estruturada com banco e instituição financeira</li>
+          <li>Defesa em execução judicial e extrajudicial</li>
+          <li>Proteção dos bens essenciais à atividade e à moradia da família</li>
         </ul>
-        <div class="service-detail__aside">
+        <div class="area__paraquem reveal">
           <h3>Para quem é</h3>
-          <p>Produtores rurais com dívidas em atraso, execução em andamento, ou renegociações anteriores que pioraram a situação em vez de resolver.</p>
+          <p>Produtor rural com dívida em atraso, execução em andamento, ou renegociação anterior que piorou a situação em vez de resolver.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTRATOS AGRÁRIOS -->
-  <section id="contratos-agrarios" class="service-detail">
-    <div class="container grid grid--2 grid--align-start">
-      <div class="reveal" style="order:1">
-        <p class="index-item__num" style="margin-bottom:12px">02</p>
-        <h2>Contratos Agrários</h2>
-        <p>
-          Um contrato bem construído evita disputas antes que elas comecem. A maioria dos
-          problemas jurídicos do produtor começa em uma cláusula mal redigida ou mal entendida
-          anos antes.
+  <section id="contratos-agrarios" class="area">
+    <div class="container area__grade">
+      <figure class="area__media faixas" style="margin:0">
+        <img src="assets/fotos/contrato-assinatura-1200.webp" srcset="assets/fotos/contrato-assinatura-700.webp 700w, assets/fotos/contrato-assinatura-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 44vw" alt="Mãos de um produtor assinando um aditivo de contrato na mesa da sede, com café, óculos e calculadora" loading="lazy" width="1200" height="2122">
+      </figure>
+      <div>
+        <h2 class="reveal">Contratos agrários</h2>
+        <p class="reveal">
+          Um contrato bem construído evita a briga antes que ela comece. A maioria dos problemas
+          jurídicos do produtor nasce numa cláusula mal escrita ou mal entendida anos antes: quem
+          paga o calcário, quem fica com o poço, o que acontece se a safra frustrar.
         </p>
-        <ul class="service-detail__list">
-          <li>Compra e venda de imóvel rural</li>
+        <ul class="area__lista reveal">
           <li>Arrendamento</li>
           <li>Parceria rural</li>
-          <li>Contratos de barter (troca de insumo por produção)</li>
+          <li>Compra e venda de imóvel rural</li>
+          <li>Barter: troca de insumo por produção</li>
         </ul>
-        <div class="service-detail__aside">
+        <div class="area__paraquem reveal">
           <h3>Para quem é</h3>
-          <p>Produtores que vão comprar, vender, arrendar ou formar parceria em imóvel rural — antes de assinar, não depois do problema aparecer.</p>
+          <p>Produtor que vai comprar, vender, arrendar ou formar parceria em imóvel rural. Antes de assinar, não depois de o problema aparecer.</p>
         </div>
-      </div>
-      <div class="editorial__frame editorial__frame--fixed reveal" style="order:2">
-        <img src="assets/serie/areas-contratos.jpg" alt="Produtor rural assinando contrato em mesa de madeira, com a lavoura ao fundo">
       </div>
     </div>
   </section>
 
   <!-- GESTÃO FINANCEIRA -->
-  <section id="gestao-financeira" class="service-detail">
-    <div class="container grid grid--2 grid--align-start">
-      <div class="editorial__frame editorial__frame--wide reveal">
-        <img src="assets/serie/areas-gestao.jpg" alt="Produtora organizando recibos e contas sobre um livro-caixa, na varanda da propriedade">
-      </div>
-      <div class="reveal">
-        <p class="index-item__num" style="margin-bottom:12px">03</p>
-        <h2>Gestão Financeira do Produtor</h2>
-        <p>
-          Sem entender onde o dinheiro está, nenhuma renegociação se sustenta. O método é
-          concreto: produtividade real (sacos por hectare frente ao custo real do hectare) e
-          onde o dinheiro está vazando.
+  <section id="gestao-financeira" class="area">
+    <div class="container area__grade">
+      <figure class="area__media faixas" style="margin:0">
+        <img src="assets/fotos/gestao-caderno-caminhonete-1200.webp" srcset="assets/fotos/gestao-caderno-caminhonete-700.webp 700w, assets/fotos/gestao-caderno-caminhonete-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 44vw" alt="Caderno de contas, caneta e celular na tampa da caminhonete, na beira de um talhão de terra vermelha" loading="lazy" width="1200" height="1500">
+      </figure>
+      <div>
+        <h2 class="reveal">Gestão financeira do produtor</h2>
+        <p class="reveal">
+          Sem entender onde o dinheiro está, nenhuma renegociação para de pé. O método é
+          concreto: produtividade real (sacas por hectare contra o custo real do hectare) e onde o
+          dinheiro está vazando.
         </p>
-        <ul class="service-detail__list">
-          <li>Separação entre finanças pessoais (PF) e da propriedade/empresa (PJ)</li>
+        <ul class="area__lista reveal">
+          <li>Separação entre as contas da família (PF) e as da propriedade (PJ)</li>
           <li>Revisão de pró-labore e retiradas</li>
-          <li>Análise de produtividade real vs. custo real por hectare</li>
-          <li>Reorganização do passivo com visão de médio e longo prazo</li>
+          <li>Produtividade real contra custo real por hectare</li>
+          <li>Passivo reorganizado com visão de médio e longo prazo</li>
         </ul>
-        <div class="service-detail__aside">
+        <div class="area__paraquem reveal">
           <h3>Para quem é</h3>
-          <p>Produtores que sentem que "o dinheiro some" mesmo com safra boa, ou que misturam contas pessoais e da propriedade sem clareza do que sobra de fato.</p>
+          <p>Produtor que sente que "o dinheiro some" mesmo com safra boa, ou que mistura as contas da casa e da fazenda sem saber o que sobra de fato.</p>
         </div>
+        <p class="reveal" style="margin-top:30px"><a class="link-arrow seta" href="index.html#a-conta">Fazer a conta da sua lavoura</a></p>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="section section--form section--tight">
-    <div class="container">
-      <div class="reveal" style="max-width:600px">
-        <p class="eyebrow">Primeiro passo</p>
-        <h2>Fale sobre a sua situação. Sem compromisso, com clareza.</h2>
-        <a href="contato.html" class="link-arrow">Agendar uma conversa →</a>
+  <section class="section section--form" data-sem-zap>
+    <div class="container prosa">
+      <figure class="prosa__foto faixas" style="margin:0;--fundo-faixa:var(--navy-3)">
+        <img src="assets/fotos/lucas-celular-1100.webp" srcset="assets/fotos/lucas-celular-640.webp 640w, assets/fotos/lucas-celular-1100.webp 1100w" sizes="(max-width: 900px) 100vw, 40vw" alt="Lucas Cabral olhando o celular, sentado à mesa do escritório" loading="lazy" width="1100" height="1650">
+      </figure>
+      <div>
+        <h2 class="reveal">Fale sobre a sua situação. Sem compromisso, com clareza.</h2>
+        <p class="reveal">Uma primeira conversa curta e sem custo. Depois, a prosa de verdade, com os papéis na mesa: na fazenda, no escritório em Jataí ou por vídeo.</p>
+        <div class="prosa__acoes reveal" style="margin-top:30px">
+          <a class="btn" href="https://wa.me/5564992086744?text=Ol%C3%A1%2C%20Lucas.%20Vim%20pelo%20site%20e%20queria%20conversar." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></svg>
+            Conversar no WhatsApp
+          </a>
+          <a class="link-arrow seta" href="contato.html">Prefiro deixar meu contato</a>
+        </div>
       </div>
     </div>
   </section>
@@ -175,14 +198,15 @@
 </main>
 
 <footer class="footer">
+  <div class="fileiras" aria-hidden="true"></div>
   <div class="container">
     <div class="footer__grid">
       <div>
-        <p class="footer__mark">Lucas Cabral Advogados</p>
+        <p class="footer__mark"><img src="assets/marca/assinatura-120.png" alt="Lucas Cabral Advogados" width="699" height="120" loading="lazy"></p>
         <p>Renegociação de dívida rural, contratos agrários e gestão financeira do produtor.</p>
       </div>
       <div class="footer__col">
-        <h4>Navegação</h4>
+        <p class="footer__titulo">Navegação</p>
         <ul>
           <li><a href="index.html">Início</a></li>
           <li><a href="sobre.html">Sobre</a></li>
@@ -192,10 +216,10 @@
         </ul>
       </div>
       <div class="footer__col">
-        <h4>Atendimento</h4>
+        <p class="footer__titulo">Atendimento</p>
         <ul>
-          <li><a href="https://wa.me/5564992086744" target="_blank" rel="noopener">(64) 99208-6744</a></li>
-          <li><span>Escritório em Jataí — GO</span></li>
+          <li><a href="https://wa.me/5564992086744" target="_blank" rel="noopener">WhatsApp (64) 99208-6744</a></li>
+          <li><span>Escritório em Jataí, GO</span></li>
           <li><span>Atendimento em todo o Brasil</span></li>
         </ul>
       </div>
@@ -204,6 +228,11 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260911b"></script>
+<a class="zap-fixo" href="https://wa.me/5564992086744?text=Ol%C3%A1%2C%20Lucas.%20Vim%20pelo%20site%20e%20queria%20conversar." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></svg>
+  WhatsApp
+</a>
+
+<script src="script.js?v=20261020"></script>
 </body>
 </html>

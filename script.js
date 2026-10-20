@@ -1,29 +1,103 @@
 (function () {
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.documentElement.classList.add('js');
 
+  /* -------------------------------------------------------------- menu */
   var navToggle = document.querySelector('.header__toggle');
   var nav = document.querySelector('.header__nav');
   if (navToggle && nav) {
+    var fechar = function () {
+      nav.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Abrir menu');
+      document.body.classList.remove('menu-aberto');
+    };
     navToggle.addEventListener('click', function () {
       var isOpen = nav.classList.toggle('is-open');
       navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+      document.body.classList.toggle('menu-aberto', isOpen);
     });
+    nav.addEventListener('click', function (ev) { if (ev.target.closest('a')) fechar(); });
+    document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') fechar(); });
   }
 
-  var parallaxTargets = document.querySelectorAll('.masthead__bg img, .page-banner__bg img');
-  if (parallaxTargets.length && !prefersReducedMotion) {
-    var onScroll = function () {
-      var offset = Math.min(window.scrollY * 0.25, 160);
-      parallaxTargets.forEach(function (img) {
-        img.style.transform = 'translateY(' + offset + 'px)';
+  /* ------------------------------------- cabeçalho, WhatsApp fixo, zoom */
+  var header = document.querySelector('.header');
+  var zapFixo = document.querySelector('.zap-fixo');
+  /* onde a tela já tem botão de WhatsApp (caderno, fechamento, contato) o fixo sai */
+  var semZap = Array.prototype.slice.call(document.querySelectorAll('[data-sem-zap], .footer'));
+  var zooms = Array.prototype.slice.call(document.querySelectorAll('.zoom-lento, .page-banner'));
+  var fileiras = Array.prototype.slice.call(document.querySelectorAll('.fileiras'));
+  var agendado = false;
+
+  var aoRolar = function () {
+    agendado = false;
+    var y = window.scrollY;
+    var h = window.innerHeight;
+    if (header) {
+      /* sobre a jornada e a capa o cabeçalho fica transparente; sólido depois delas */
+      var capa = document.querySelector('.jornada, .page-banner');
+      var solido = capa ? capa.getBoundingClientRect().bottom < 80 : y > 40;
+      header.classList.toggle('is-solido', solido);
+    }
+
+    if (zapFixo) {
+      var passouTopo = y > h * 0.9;
+      var temOutro = semZap.some(function (el) {
+        var r = el.getBoundingClientRect();
+        return r.top < h * 0.9 && r.bottom > h * 0.1;
       });
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+      zapFixo.classList.toggle('is-visivel', passouTopo && !temOutro);
+    }
+
+    if (!prefersReducedMotion) {
+      zooms.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > h) return;
+        /* 1.12 ao entrar por baixo, 1.0 ao sair por cima */
+        var p = Math.min(1, Math.max(0, (h - r.top) / (h + r.height)));
+        el.style.setProperty('--zoom', (1.12 - p * 0.12).toFixed(4));
+      });
+      fileiras.forEach(function (el) {
+        el.style.setProperty('--fileiras-x', (-y * 0.15).toFixed(1) + 'px');
+      });
+    }
+  };
+  var agendar = function () {
+    if (!agendado) { agendado = true; requestAnimationFrame(aoRolar); }
+  };
+  window.addEventListener('scroll', agendar, { passive: true });
+  window.addEventListener('resize', agendar);
+  aoRolar();
+
+  /* ------------------------------------------------ vídeo de ambiente
+     O vídeo de capa só baixa quando aparece na tela, e nunca com economia de
+     dados ou movimento reduzido: aí fica o pôster, que já está no HTML. */
+  var conexao = navigator.connection || {};
+  var economia = !!conexao.saveData || /(^|slow-)2g/.test(conexao.effectiveType || '');
+  var videos = Array.prototype.slice.call(document.querySelectorAll('video.video-ambiente[data-video]'));
+  if (videos.length && !prefersReducedMotion && !economia && 'IntersectionObserver' in window) {
+    var emPe = window.matchMedia('(max-aspect-ratio: 4/5)').matches;
+    var ioVideo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var v = entry.target;
+        if (entry.isIntersecting) {
+          if (!v.getAttribute('src')) {
+            v.src = (emPe && v.getAttribute('data-video-m')) || v.getAttribute('data-video');
+          }
+          var tocar = v.play();
+          if (tocar && tocar.catch) tocar.catch(function () { /* autoplay negado: fica o pôster */ });
+        } else if (!v.paused) {
+          v.pause();
+        }
+      });
+    }, { threshold: 0.05 });
+    videos.forEach(function (v) { ioVideo.observe(v); });
   }
 
   function getGroupId(el) {
-    var container = el.closest('.grid, .index-list, .method-list, .footer__grid') || el.parentElement;
+    var container = el.closest('.grid, .index-list, .method-list, .footer__grid, .radar-lista, .frentes, .metodo') || el.parentElement;
     if (!container.dataset.revealGroupId) {
       container.dataset.revealGroupId = 'g' + Math.random().toString(36).slice(2);
     }
@@ -129,13 +203,14 @@
 
     if (prefersReducedMotion) {
       marcos.forEach(function (marco) { marco.classList.add('is-reached'); });
+      timeline.style.setProperty('--linha', '1');
     } else {
       var ANCORA = 0.62; /* altura da tela em que o "agora" da história passa */
       var maxProgresso = 0;
-      var agendado = false;
+      var agendadoLinha = false;
 
       var desenhar = function () {
-        agendado = false;
+        agendadoLinha = false;
         var caixa = timeline.getBoundingClientRect();
         var linhaDaTela = window.innerHeight * ANCORA;
         var progresso = (linhaDaTela - caixa.top) / caixa.height;
@@ -150,21 +225,23 @@
         });
       };
 
-      var aoRolar = function () {
-        if (!agendado) {
-          agendado = true;
+      var aoRolarLinha = function () {
+        if (!agendadoLinha) {
+          agendadoLinha = true;
           requestAnimationFrame(desenhar);
         }
       };
 
-      window.addEventListener('scroll', aoRolar, { passive: true });
-      window.addEventListener('resize', aoRolar);
+      window.addEventListener('scroll', aoRolarLinha, { passive: true });
+      window.addEventListener('resize', aoRolarLinha);
       desenhar();
     }
   }
 
-  var revealEls = document.querySelectorAll('.reveal');
+  /* ------------------------------------------------- revelação e faixas */
+  var revealEls = document.querySelectorAll('.reveal, .faixas');
   revealEls.forEach(function (el) {
+    if (!el.classList.contains('reveal')) return;
     var groupId = getGroupId(el);
     var index = groupCounters[groupId] || 0;
     groupCounters[groupId] = index + 1;
@@ -181,7 +258,7 @@
           }
         });
       },
-      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
     );
 
     revealEls.forEach(function (el) {

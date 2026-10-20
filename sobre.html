@@ -3,11 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sobre Lucas Cabral — Lucas Cabral Advogados</title>
+<title>Sobre Lucas Cabral | Lucas Cabral Advogados</title>
 <meta name="description" content="A história e o método por trás do trabalho de Lucas Cabral em Direito do Agronegócio e Crédito Rural.">
+<meta name="theme-color" content="#11131b">
 <link rel="icon" href="assets/logo-fundo-navy.png">
 <link rel="canonical" href="https://lucascabraladvogados.com.br/sobre.html">
-<link rel="stylesheet" href="styles.css?v=20260911b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Kalam:wght@400;700&family=Marcellus&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261020">
+<script>document.documentElement.classList.add('js');</script>
 <script src="/rastreamento.js?v=20260916" defer></script>
 <script type="application/ld+json">
 {
@@ -71,31 +76,33 @@
 </script>
 </head>
 <body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
 <header class="header">
   <div class="container header__inner">
-    <a href="index.html" class="header__mark">
-      <img src="assets/logo-preto-recorte.png" alt="Lucas Cabral Advogados">
+    <a href="index.html" class="header__mark" aria-label="Lucas Cabral Advogados, página inicial">
+      <img class="header__simbolo" src="assets/marca/simbolo-96.png" alt="" width="111" height="96">
+      <img src="assets/marca/assinatura-60.png" alt="Lucas Cabral Advogados" width="349" height="60">
     </a>
-    <button class="header__toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
-    <ul class="header__nav">
+    <button class="header__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul class="header__nav" id="menu">
       <li><a href="index.html">Início</a></li>
       <li><a href="sobre.html" aria-current="page">Sobre</a></li>
       <li><a href="areas-de-atuacao.html">Áreas de Atuação</a></li>
       <li><a href="radar-agro.html">Radar Agro</a></li>
       <li><a href="contato.html">Contato</a></li>
+      <li class="header__nav-zap"><a class="btn" href="https://wa.me/5564992086744?text=Ol%C3%A1%2C%20Lucas.%20Vim%20pelo%20site%20e%20queria%20conversar." target="_blank" rel="noopener">Conversar no WhatsApp</a></li>
     </ul>
-    <a href="contato.html" class="btn header__cta">Falar com Lucas</a>
+    <a href="https://wa.me/5564992086744?text=Ol%C3%A1%2C%20Lucas.%20Vim%20pelo%20site%20e%20queria%20conversar." class="btn header__cta" target="_blank" rel="noopener">WhatsApp</a>
   </div>
 </header>
 
-<main>
+<main id="conteudo">
 
-  <div class="page-banner">
-    <div class="page-banner__bg"><img src="assets/sobre-banner-mesa.jpg" alt="Mãos de Lucas Cabral sobre um documento aberto na mesa do escritório"></div>
+  <div class="page-banner page-banner--direita">
+    <div class="page-banner__bg"><img src="assets/fotos/lucas-fazenda-conversa-1800.webp" srcset="assets/fotos/lucas-fazenda-conversa-900.webp 900w, assets/fotos/lucas-fazenda-conversa-1800.webp 1800w" sizes="100vw" alt="Lucas Cabral na lavoura de milho colhida, conversando e sorrindo" fetchpriority="high"></div>
     <div class="page-banner__overlay"></div>
     <div class="container">
-      <p class="eyebrow reveal">Sobre</p>
       <h1 class="reveal">Quem cuida do seu caso</h1>
       <p class="reveal">A história e o método por trás do trabalho.</p>
     </div>
@@ -104,41 +111,37 @@
   <!-- HISTÓRIA -->
   <section class="section">
     <div class="container editorial">
-      <div class="reveal">
-        <p class="eyebrow">A origem</p>
-        <h2>Uma história que começa em 2016, longe de qualquer tribunal</h2>
-        <p>
+      <div>
+        <h2 class="reveal">Uma história que começa em 2016, longe de qualquer tribunal</h2>
+        <p class="capitular reveal">
           Em 2016, a família de Lucas quebrou financeiramente. Quem já viu o patrimônio da própria
           família em risco não precisa que ninguém explique o que isso faz com as pessoas: a
           conversa que muda de tom na mesa do almoço, a conta que não fecha, a sensação de que o
           que levou uma vida pra construir pode se desfazer em meses.
         </p>
-        <p>
+        <p class="reveal">
           A advocacia veio depois disso, e por causa disso. Desde a faculdade, Lucas carregava a
           intenção de ter a própria porta. Em fevereiro de 2026, ela abriu: um escritório
           dedicado ao produtor rural, com foco no problema que ele conhece por dentro, a dívida
           que ameaça a terra de uma família.
         </p>
-        <p>
+        <p class="reveal">
           A motivação declarada não é dinheiro. É saber exatamente o que o cliente está sentindo
           quando procura ajuda, porque ele já sentiu. E é ter transformado essa memória em
           preparo técnico pra resolver, não em discurso.
         </p>
       </div>
-      <div class="editorial__frame reveal">
-        <img src="assets/lucas-memoria.jpg" alt="Lucas Cabral à mesa do escritório, mãos entrelaçadas">
-      </div>
+      <figure class="editorial__frame faixas zoom-lento" style="margin:0">
+        <img src="assets/fotos/lucas-memoria-1100.webp" srcset="assets/fotos/lucas-memoria-640.webp 640w, assets/fotos/lucas-memoria-1100.webp 1100w" sizes="(max-width: 760px) 100vw, 42vw" alt="Lucas Cabral à mesa do escritório, mãos entrelaçadas" loading="lazy" width="1100" height="1650">
+      </figure>
     </div>
   </section>
-
-  <hr class="rule">
 
   <!-- LINHA DO TEMPO -->
   <section class="section timeline-section">
     <div class="container">
-      <div class="section__head reveal">
-        <p class="eyebrow">A trajetória</p>
-        <h2>De uma família quebrada até a porta própria</h2>
+      <div class="section__head">
+        <h2 class="reveal">De uma família quebrada até a porta própria</h2>
       </div>
 
       <ol class="timeline">
@@ -153,7 +156,7 @@
           <p class="timeline__year">2020</p>
           <div class="timeline__body">
             <h3>Dentro do processo</h3>
-            <p>Formado em Direito, entra para um escritório e passa a atuar em renegociação de dívida rural pela via judicial: defesa em execução, revisão de cédula e contrato — o que se briga no processo.</p>
+            <p>Formado em Direito, entra para um escritório e passa a atuar em renegociação de dívida rural pela via judicial: defesa em execução, revisão de cédula e contrato. O que se briga no processo.</p>
           </div>
         </li>
         <li class="timeline__item">
@@ -184,30 +187,29 @@
   </section>
 
   <!-- RETRATO / QUEM É -->
-  <section class="section section--cream">
+  <section class="section">
     <div class="container">
       <div class="portrait">
-        <div class="portrait__frame reveal">
-          <img src="assets/lucas-retrato.jpg" alt="Lucas Cabral na sala de reunião do escritório" width="1200" height="1800">
-          <span class="portrait__oab">OAB/GO 67.854</span>
-        </div>
-        <div class="reveal">
-          <p class="eyebrow">Quem é</p>
-          <h2>Lucas Cabral, advogado do produtor rural</h2>
-          <p>
+        <figure class="portrait__frame faixas" style="margin:0">
+          <img src="assets/fotos/lucas-fazenda-1100.webp" srcset="assets/fotos/lucas-fazenda-640.webp 640w, assets/fotos/lucas-fazenda-1100.webp 1100w" sizes="(max-width: 900px) 100vw, 40vw" alt="Lucas Cabral de pé na lavoura colhida, sorrindo no meio de uma conversa" loading="lazy" width="1100" height="1650">
+          <figcaption class="portrait__oab">OAB/GO 67.854</figcaption>
+        </figure>
+        <div>
+          <h2 class="reveal">Lucas Cabral, advogado do produtor rural</h2>
+          <p class="reveal">
             À frente do escritório que leva o seu nome, atende produtores rurais e suas famílias em
             renegociação de dívida rural, contratos agrários e gestão financeira da porteira pra
             dentro. O escritório fica em Jataí, no sudoeste goiano, e o atendimento alcança o
             Brasil inteiro.
           </p>
-          <p>
+          <p class="reveal">
             Se puder ser lembrado por uma única coisa, que seja esta: um bom profissional,
             tecnicamente. Relacionamento abre porta, mas é a técnica que resolve o caso. Por isso o
             estudo vem antes do conselho: mercado, Plano Safra, decisões do STJ, regras do Banco
             Central, tudo passa pelo filtro do que muda de verdade na vida de quem planta.
           </p>
-          <div class="study-block">
-            <p class="eyebrow">O estudo por trás</p>
+          <div class="study-block reveal">
+            <h3 class="titulo-curto">O estudo por trás</h3>
             <ul class="study">
               <li>Pós-graduação em Direito Ambiental Aplicado ao Agronegócio</li>
               <li>Administrador Judicial</li>
@@ -222,77 +224,56 @@
 
   <!-- NÚMEROS -->
   <section class="section section--dark">
-    <div class="container">
-      <div class="grid grid--2 grid--align-start">
-        <div class="reveal">
-          <p class="eyebrow">O que já passou pela mesa</p>
-          <h2>Renegociação de dívida rural não é teoria aqui</h2>
-        </div>
-        <div class="reveal">
-          <p class="pullstat">
-            <span><b>R$ 200 mi</b> em dívida rural já passaram por essa mesa.</span>
-            <span><b>70 famílias</b> produtoras atendidas.</span>
-            <span><b>30 casos</b> em que a garantia estava no centro da discussão.</span>
-          </p>
-          <p class="pullstat__note">
-            Números aproximados de experiência acumulada, incluindo a atuação anterior à abertura
-            do escritório. Cada caso depende dos fatos e dos documentos — não existe garantia de
-            resultado.
-          </p>
+    <div class="container editorial">
+      <div>
+        <h2>Renegociação de dívida rural não é teoria aqui.</h2>
+        <p class="numeros__nota" style="max-width:46ch">Números aproximados de experiência acumulada, incluindo a atuação anterior à abertura do escritório. Cada caso depende dos fatos e dos documentos, e não existe garantia de resultado.</p>
+      </div>
+      <div>
+        <div class="folha folha--nota" role="group" aria-label="O que já passou pela mesa">
+          <p class="folha__cabeca"><span>O que já passou pela mesa</span><span>até 2026</span></p>
+          <ul class="folha__linhas">
+            <li class="folha__linha is-escrita"><span class="folha__rotulo">Dívida rural</span><span class="folha__valor">R$ 200 mi</span></li>
+            <li class="folha__linha is-escrita"><span class="folha__rotulo">Famílias produtoras</span><span class="folha__valor">70</span></li>
+            <li class="folha__linha is-escrita"><span class="folha__rotulo">Casos com a garantia no centro</span><span class="folha__valor">30</span></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- CENTRO DE INTELIGÊNCIA -->
-  <section class="section section--dark" style="padding-top:0">
-    <div class="container">
-      <hr class="rule rule--dark" style="margin-bottom:56px">
-      <p class="eyebrow reveal">Como o trabalho é feito</p>
-      <blockquote class="quote reveal">
-        “Um Centro de Inteligência do Agronegócio — cura e traduz conhecimento técnico para a
-        realidade do produtor, e vai até onde o produtor está.”
-      </blockquote>
     </div>
   </section>
 
   <!-- MÉTODO -->
-  <section class="section section--dark section--tight" style="padding-top:0">
+  <section class="section">
     <div class="container">
-      <hr class="rule rule--dark" style="margin-bottom:56px">
-      <p class="eyebrow reveal">O método</p>
-      <div class="method-list">
-        <div class="method-list__item reveal">
-          <p class="method-list__num">01 — Radar</p>
-          <h3>Pesquisa contínua</h3>
-          <p>Mercado, Plano Safra, economia, leis, decisões do STJ/STF, Banco Central, Conab.</p>
-        </div>
-        <div class="method-list__item reveal">
-          <p class="method-list__num">02 — Campo</p>
-          <h3>Estar presente</h3>
-          <p>Visitas a fazendas e famílias para aprender com a realidade de cada produtor — nunca para ensinar de cima.</p>
-        </div>
-        <div class="method-list__item reveal">
-          <p class="method-list__num">03 — Oficina</p>
-          <h3>Traduzir</h3>
-          <p>O que foi aprendido vira conteúdo e orientação prática — artigos, vídeos, conversas.</p>
-        </div>
-        <div class="method-list__item reveal">
-          <p class="method-list__num">04 — Distribuição</p>
-          <h3>Chegar antes</h3>
-          <p>Chegar até o produtor onde ele já está, antes de precisar de advogado.</p>
-        </div>
+      <div class="section__head">
+        <h2 class="reveal">O estudo vem antes do conselho.</h2>
+        <p class="reveal">Nada sai daqui por opinião solta. Cada orientação nasce de pesquisa e de ver a lavoura de perto.</p>
       </div>
+      <ol class="metodo">
+        <li class="reveal"><h3>Radar</h3><p>Pesquisa contínua: mercado, Plano Safra, economia, leis, decisões do STJ e do STF, Banco Central, Conab.</p></li>
+        <li class="reveal"><h3>Campo</h3><p>Visitas a fazendas e famílias pra aprender com a realidade de cada produtor, nunca pra ensinar de cima.</p></li>
+        <li class="reveal"><h3>Oficina</h3><p>O que foi aprendido vira orientação prática: artigos, vídeos, conversas.</p></li>
+        <li class="reveal"><h3>Distribuição</h3><p>Chegar até o produtor onde ele já está, antes de ele precisar de advogado.</p></li>
+      </ol>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="section section--form section--tight">
-    <div class="container">
-      <div class="reveal" style="max-width:600px">
-        <p class="eyebrow">Primeiro passo</p>
-        <h2>Fale sobre a sua situação. Sem compromisso, com clareza.</h2>
-        <a href="contato.html" class="link-arrow">Agendar uma conversa →</a>
+  <section class="section section--form" data-sem-zap>
+    <div class="container prosa">
+      <figure class="prosa__foto faixas" style="margin:0;--fundo-faixa:var(--navy-3)">
+        <img src="assets/fotos/lucas-celular-1100.webp" srcset="assets/fotos/lucas-celular-640.webp 640w, assets/fotos/lucas-celular-1100.webp 1100w" sizes="(max-width: 900px) 100vw, 40vw" alt="Lucas Cabral olhando o celular, sentado à mesa do escritório" loading="lazy" width="1100" height="1650">
+      </figure>
+      <div>
+        <h2 class="reveal">Fale sobre a sua situação. Sem compromisso, com clareza.</h2>
+        <p class="reveal">Uma primeira conversa curta e sem custo. Depois, a prosa de verdade, com os papéis na mesa: na fazenda, no escritório em Jataí ou por vídeo.</p>
+        <div class="prosa__acoes reveal" style="margin-top:30px">
+          <a class="btn" href="https://wa.me/5564992086744?text=Ol%C3%A1%2C%20Lucas.%20Vim%20pelo%20site%20e%20queria%20conversar." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></svg>
+            Conversar no WhatsApp
+          </a>
+          <a class="link-arrow seta" href="contato.html">Prefiro deixar meu contato</a>
+        </div>
       </div>
     </div>
   </section>
@@ -300,14 +281,15 @@
 </main>
 
 <footer class="footer">
+  <div class="fileiras" aria-hidden="true"></div>
   <div class="container">
     <div class="footer__grid">
       <div>
-        <p class="footer__mark">Lucas Cabral Advogados</p>
+        <p class="footer__mark"><img src="assets/marca/assinatura-120.png" alt="Lucas Cabral Advogados" width="699" height="120" loading="lazy"></p>
         <p>Renegociação de dívida rural, contratos agrários e gestão financeira do produtor.</p>
       </div>
       <div class="footer__col">
-        <h4>Navegação</h4>
+        <p class="footer__titulo">Navegação</p>
         <ul>
           <li><a href="index.html">Início</a></li>
           <li><a href="sobre.html">Sobre</a></li>
@@ -317,10 +299,10 @@
         </ul>
       </div>
       <div class="footer__col">
-        <h4>Atendimento</h4>
+        <p class="footer__titulo">Atendimento</p>
         <ul>
-          <li><a href="https://wa.me/5564992086744" target="_blank" rel="noopener">(64) 99208-6744</a></li>
-          <li><span>Escritório em Jataí — GO</span></li>
+          <li><a href="https://wa.me/5564992086744" target="_blank" rel="noopener">WhatsApp (64) 99208-6744</a></li>
+          <li><span>Escritório em Jataí, GO</span></li>
           <li><span>Atendimento em todo o Brasil</span></li>
         </ul>
       </div>
@@ -329,6 +311,11 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260911b"></script>
+<a class="zap-fixo" href="https://wa.me/5564992086744?text=Ol%C3%A1%2C%20Lucas.%20Vim%20pelo%20site%20e%20queria%20conversar." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></svg>
+  WhatsApp
+</a>
+
+<script src="script.js?v=20261020"></script>
 </body>
 </html>
