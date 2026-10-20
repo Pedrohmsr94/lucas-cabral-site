@@ -1951,3 +1951,30 @@ main { display: block; }
 .section--leitura blockquote { color: #1b1e2c; border-left-color: #b87249; }
 .section--leitura th { color: #8c5530; }
 .section--leitura ::selection { background: rgba(184, 114, 73, 0.3); color: #1b1e2c; }
+
+/* capa da Sobre: subtítulo na mesma borda do título (o max-width do p da capa
+   ganhava por especificidade e empurrava o texto pro ombro do Lucas) */
+@media (min-width: 900px) {
+  .page-banner.page-banner--direita .container > * { max-width: 560px; }
+}
+
+@media (max-width: 900px) {
+  /* no celular, nada aparece por trás do cabeçalho nem acima da folha */
+  .header.is-solido { background: var(--noite); -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .caderno__folha-wrap::before {
+    content: "";
+    position: absolute;
+    left: calc(var(--gutter) * -1);
+    right: calc(var(--gutter) * -1);
+    top: calc(var(--header-h) * -1 - 6px);
+    height: calc(var(--header-h) + 16px);
+    background: var(--noite);
+    pointer-events: none;
+  }
+  /* folha mais baixa e último cartão sem o parágrafo: o cartão cabe inteiro */
+  .folha { --pauta-h: 27px; }
+  .folha__linha { font-size: 0.98rem; padding-top: 4px; }
+  .passo--final .passo__cartao > p:not(.caderno__privado) { display: none; }
+  .passo--final .caderno__acoes { margin-top: 18px; }
+  .passo--final .caderno__privado { margin-top: 14px; }
+}
