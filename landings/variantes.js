@@ -49,6 +49,14 @@
   }
   ['tag', 'h1', 'sub', 'cta', 'cta2', 'passo1'].forEach(texto);
 
+  /* Na Marcellus o 1 vira I ("MP I.376"): algarismo do título vai em Albert
+     Sans, como no HTML (.alg). textContent acima apagou os spans; refaz. */
+  var titulo = document.querySelector('[data-v="h1"]');
+  if (titulo && /\d/.test(titulo.textContent)) {
+    titulo.innerHTML = titulo.textContent.replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/\d+(?:[.,\/]\d+)*%?/g, '<span class="alg">$&</span>');
+  }
+
   /* Os links do hero já existem; a barra fixa e o rodapé ainda não foram
      lidos pelo navegador quando este script roda, por isso aplica de novo
      quando o documento terminar. */
