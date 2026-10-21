@@ -1,14 +1,15 @@
-/* Landings: a ferramenta do meio da página (outubro de 2026).
+/* Landings: a ferramenta do meio da página e o prazo da MP (outubro de 2026).
 
-   - Caderno (dívida e gestão): o produtor troca os números do exemplo pelos
-     dele e a sobra se refaz; o botão manda a conta pronta pro WhatsApp.
-   - Checklist (arrendamento e contratos): ele marca o que o contrato dele já
-     diz; o que ficou sem marcar vai na mensagem.
+   Cada página tem um teste de toque, e o resultado vai pronto pro WhatsApp:
+   - teste (renegociação): três perguntas de sim ou não, os critérios da MP;
+   - escolha (execução, recuperação): uma opção, "em que pé está";
+   - checklist (arrendamento, contratos): o que o contrato já diz;
+   - caderno (gestão): a conta da safra com os números da pessoa.
 
    Enquanto a pessoa não mexe, a mensagem é genérica: o exemplo não é a conta
    dela, e "ficou tudo em aberto" sem ela ter marcado nada seria mentira.
 
-   Nada sai do aparelho até ele apertar o botão. O link é wa.me, então o
+   Nada sai do aparelho até ela tocar no botão. O link é wa.me, então o
    rastreamento.js conta o clique como qualquer outro botão de WhatsApp. */
 (function () {
   var NUMERO = '5564992086744';
@@ -30,6 +31,69 @@
     else if (/\.\d{3}($|\.)/.test(limpo)) limpo = limpo.replace(/\./g, '');
     var v = parseFloat(limpo);
     return isFinite(v) ? v : 0;
+  }
+
+  function paragrafo(classe, texto) {
+    var p = document.createElement('p');
+    p.className = classe;
+    p.textContent = texto;
+    return p;
+  }
+
+  /* --------------------------------------------------- prazo da MP 1.376 */
+  /* Conta por data de calendário, não por hora: no dia 12 é "último dia". */
+  var prazo = document.querySelector('[data-prazo]');
+  if (prazo) {
+    var p = prazo.getAttribute('data-prazo').split('-');
+    var hoje = new Date();
+    var dias = Math.round((Date.UTC(+p[0], +p[1] - 1, +p[2]) - Date.UTC(hoje.getFullYear(), hoje.getMonth(), hoje.getDate())) / 864e5);
+    var alvo = prazo.querySelector('[data-prazo-dias]');
+    if (dias < 0) prazo.hidden = true;
+    else if (alvo) alvo.textContent = dias === 0 ? ' · hoje é o último dia' : dias === 1 ? ' · falta 1 dia' : ' · faltam ' + dias + ' dias';
+  }
+
+  /* ---------------------------------------------------- teste: sim ou não */
+  var teste = document.querySelector('[data-teste]');
+  if (teste) {
+    var perguntas = Array.prototype.slice.call(teste.querySelectorAll('[data-pergunta]'));
+    var resultado = teste.querySelector('[data-teste-resultado]');
+    var zapTeste = teste.querySelector('[data-teste-zap]');
+    var rotuloTeste = teste.querySelector('[data-teste-rotulo]');
+
+    teste.addEventListener('change', function () {
+      var respostas = [];
+      var sims = 0;
+      var faltam = perguntas.filter(function (q) {
+        var marcada = q.querySelector('input:checked');
+        if (!marcada) return true;
+        if (marcada.value === 'sim') sims++;
+        respostas.push(q.getAttribute('data-pergunta') + ': ' + marcada.value);
+        return false;
+      });
+      if (faltam.length) return;
+      var chave = sims >= 3 ? '3' : String(Math.max(sims, 1));
+      resultado.textContent = '';
+      resultado.appendChild(paragrafo('teste__veredito', teste.getAttribute('data-r' + chave)));
+      resultado.appendChild(paragrafo('teste__detalhe', teste.getAttribute('data-d' + chave)));
+      zapTeste.href = link(teste.getAttribute('data-msg').replace('{respostas}', respostas.join('; ')));
+      if (rotuloTeste) rotuloTeste.textContent = teste.getAttribute('data-rotulo-depois');
+    });
+  }
+
+  /* --------------------------------------------------- escolha: uma opção */
+  var escolha = document.querySelector('[data-escolha]');
+  if (escolha) {
+    var resultadoEscolha = escolha.querySelector('[data-escolha-resultado]');
+    var zapEscolha = escolha.querySelector('[data-escolha-zap]');
+    var rotuloEscolha = escolha.querySelector('[data-escolha-rotulo]');
+
+    escolha.addEventListener('change', function (ev) {
+      var opcao = ev.target;
+      if (!opcao || opcao.type !== 'radio') return;
+      resultadoEscolha.textContent = opcao.getAttribute('data-resultado');
+      zapEscolha.href = link(escolha.getAttribute('data-msg').replace('{valor}', opcao.value));
+      if (rotuloEscolha) rotuloEscolha.textContent = escolha.getAttribute('data-rotulo-depois');
+    });
   }
 
   /* ---------------------------------------------------------- caderno */
