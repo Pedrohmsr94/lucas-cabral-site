@@ -62,12 +62,39 @@
   var ABERTA_EM = Date.now();
   var MINIMO_MS = 3000;
 
+  /* 2026-10-26: o clique também vai direto pro painel, no momento do toque,
+     sem esperar o GTM. Em 3G lento o botão aparece em 4 s e o GTM só fica
+     pronto em 13 s: quem toca nesse intervalo não existe pro GA4 nem pro
+     Google Ads, e foi assim que a primeira cliente vinda do Google (15/10)
+     ficou invisível. sendBeacon sobrevive à troca de página pro WhatsApp.
+     Aqui não tem filtro de 3 s: o painel grava tudo e marca o suspeito. */
+  var PAINEL = 'https://lucas-cabral-painel.vercel.app/api/cliques';
+  function gravarNoPainel(tipo, href) {
+    if (!PRODUCAO) return;
+    try {
+      var ref = '';
+      try { ref = sessionStorage.getItem('lc_ref') || ''; } catch (e) {}
+      var corpo = JSON.stringify({
+        tipo: tipo, pagina: location.pathname, url: location.href, destino: href,
+        rastreio: origem(), ref: ref, ms: Date.now() - ABERTA_EM
+      });
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(PAINEL, new Blob([corpo], { type: 'text/plain' }));
+      } else {
+        fetch(PAINEL, { method: 'POST', body: corpo, keepalive: true, mode: 'no-cors', headers: { 'Content-Type': 'text/plain' } });
+      }
+    } catch (e) { /* medir nunca atrapalha o clique */ }
+  }
+
   document.addEventListener('click', function (ev) {
     var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
     if (!a) return;
     var href = a.getAttribute('href') || '';
+    var eWhats = href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp') !== -1;
+    if (eWhats) gravarNoPainel('whatsapp', href);
+    else if (href.indexOf('tel:') === 0) gravarNoPainel('telefone', href);
     if (Date.now() - ABERTA_EM < MINIMO_MS) return;
-    if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp') !== -1) {
+    if (eWhats) {
       window.dataLayer.push({ event: 'clique_whatsapp', pagina: location.pathname, rastreio: origem() });
     } else if (href.indexOf('tel:') === 0) {
       window.dataLayer.push({ event: 'clique_telefone', pagina: location.pathname, rastreio: origem() });
